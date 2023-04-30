@@ -1,0 +1,102 @@
+.dreams {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+   .wrapper {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     margin-top: 100px;
+     margin-bottom: 100px;
+     h2 {
+       position: relative;
+       margin-bottom: 2em;
+       font-size: clamp(1rem, 0rem + 8vw, 3rem);
+       font-weight: 300;
+       text-transform: uppercase;
+       text-align: center;
+       color: #1755e7;
+       letter-spacing: 2px;
+     }
+     .dreams_box {
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+       margin-top:  20px;
+       padding: 20px;
+       width: 100%;
+        @media (max-width: 768px) {
+          flex-direction: column;
+          justify-content: center;
+          margin: 0 auto;
+        }
+       .dreams__box-img {
+         max-height: 400px;
+         margin: 0 auto;
+           img{
+             width: 100%;
+
+             @media (max-width: 768px ) {
+               height: 100%;
+             }
+           }
+       }
+       .dreams__box-text {
+         width: 100%;
+         padding-left: 150px;
+          @media (max-width: 768px) {
+            max-width: 600px;
+            padding: unset;
+          }
+         .dreams__title {
+           font-size: clamp(1rem, 0.5714rem + 1.1429vw, 2rem);
+           margin-top: 20px;
+           margin-bottom: 20px;
+         }
+         .dreams__text {
+           font-size: clamp(1rem, 0rem + 8vw, 1.3rem);
+         }
+       }
+     }
+     .dreams__box {
+       display: flex;
+       align-items: center;
+       flex-direction: row-reverse;
+       margin-top: 20px;
+       padding: 20px;
+       width: 100%;
+       @media (max-width: 768px) {
+         flex-direction: column;
+         justify-content: center;
+         margin: 0 auto;
+       }
+       .dreams__box-img {
+         max-height: 400px;
+         margin: 0 auto;
+         img{
+           width: 100%;
+           @media (max-width: 768px ) {
+             height: 100%;
+           }
+         }
+       }
+       .dreams__box-text {
+         width: 100%;
+         padding-right: 150px;
+         @media (max-width: 768px) {
+           max-width: 600px;
+           padding: unset;
+         }
+         .dreams__title {
+           font-size: clamp(1rem, 0.5714rem + 1.1429vw, 2rem);
+           margin-top: 20px;
+           margin-bottom: 20px;
+         }
+         .dreams__text {
+           font-size: clamp(1rem, 0rem + 8vw, 1.3rem);
+         }
+       }
+     }
+
+   }
+}

@@ -1,0 +1,56 @@
+@import "../../sass/colors";
+
+.singielApartment {
+  position: relative;
+  border-radius: 10px;
+  width: 360px;
+  height: auto;
+     .imgContainer {
+       width: 100%;
+       height: 300px;
+       margin-bottom: 5px;
+       img {
+          width: 100%;
+          height: 100%;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          object-fit: cover;
+        }
+     }
+    .location {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+       span:nth-child(2) {
+         display: flex;
+         align-items: center;
+         gap: 5px;
+       }
+    }
+    .ofert {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .checkOfert {
+        padding: 3px;
+        background-color: $dark;
+        border-radius: 10px;
+         a {
+           color: white;
+           text-decoration: none;
+         }
+      }
+    }
+  .heart {
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .red {
+    color: red;
+  }
+}

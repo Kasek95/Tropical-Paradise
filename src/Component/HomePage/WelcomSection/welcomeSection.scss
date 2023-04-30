@@ -1,0 +1,56 @@
+@import "../../sass/colors";
+.welcome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 726px;
+  width: 100%;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../../../assets/img.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -19;
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 6.6rem;
+    color:$colorWhite;
+      @media (max-width: 768px){
+        font-size: 4.4rem;
+      }
+  }
+  p {
+    text-align: center;
+    font-size: 2.2rem;
+    color: $colorWhite;
+    text-transform: uppercase;
+     @media (max-width: 768px) {
+       font-size: 1.5rem;
+     }
+
+  }
+  .header__btn {
+    margin-top: 2em;
+    padding: 0.8em 1.6em;
+    font-size: 1.4rem;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    color: #2e2e2e;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .white-block {
+    position: absolute;
+    bottom:-1px;
+    left: -30px;
+    background-color: white;
+    height: 50px;
+    width: 50%;
+    transform: skewX(45deg);
+  }
+}

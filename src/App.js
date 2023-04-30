@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState,useEffect} from "react";
+import supabase from "./supabase";
+import {Route, Routes, Navigate, useParams} from "react-router-dom";
+import Home from "./Component/HomePage/Home";
+import IslandPage from "./Component/IslandsPage/IslandPage";
+import Header from "./Component/header/Header";
+import AdminPanel from "./Component/adminPanel/AdminPanel";
+import User from "./Component/userPanel/User";
+import Footer from "./Component/Footer/Footer";
+import Apartment from "./Component/IslandsPage/apartment/Apartment";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    const [rooms, setRooms] = useState();
+    const [opinions, setOpinions] = useState()
+
+    useEffect(() => {
+        getRooms();
+    }, []);
+
+    useEffect(()=> {
+        getOpinion()
+    },[])
+
+    async function getRooms() {
+        const { data } = await supabase.from("Roms").select();
+        setRooms(data);
+    }
+    async function getOpinion() {
+        const {data} = await  supabase.from("opinions").select()
+        setOpinions(data)
+    }
+
+    return (
+      <>
+          <Header apartments={rooms}/>
+          <Routes>
+              <Route path="*" element={<Navigate to= "/" />}> </Route>
+              <Route path="/" element={<Home/>}></Route>
+              <Route path="/islands" element={<IslandPage getRooms={getRooms} apartments={rooms}/>}></Route>
+              <Route path={`/islands/apartment/:apartmentId`} element={<Apartment opinions={opinions} getOpinion={getOpinion} getRooms={getRooms} apartments={rooms}/>}></Route>
+              <Route path="/adminPanel" element={<AdminPanel/>}></Route>
+              <Route path="/Strefa-klienta" element={<User apartments={rooms}/>}></Route>
+          </Routes>
+          <Footer/>
+
+      </>
   );
 }
 
