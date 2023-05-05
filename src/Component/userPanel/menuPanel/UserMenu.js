@@ -10,7 +10,7 @@ const UserMenu = ({apartments}) => {
 
     const [login, setLogin] = useState(false)
 
-
+    if(!apartments) return null
     return (
         <>
             <div className={"menu__user"}>

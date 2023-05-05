@@ -8,6 +8,8 @@ import AdminPanel from "./Component/adminPanel/AdminPanel";
 import User from "./Component/userPanel/User";
 import Footer from "./Component/Footer/Footer";
 import Apartment from "./Component/IslandsPage/apartment/Apartment";
+import Login from "./Component/login/Login";
+import Register from "./Component/register/Register";
 
 function App() {
     const [rooms, setRooms] = useState();
@@ -39,6 +41,8 @@ function App() {
               <Route path="/islands" element={<IslandPage getRooms={getRooms} apartments={rooms}/>}></Route>
               <Route path={`/islands/apartment/:apartmentId`} element={<Apartment opinions={opinions} getOpinion={getOpinion} getRooms={getRooms} apartments={rooms}/>}></Route>
               <Route path="/adminPanel" element={<AdminPanel/>}></Route>
+              <Route path={"/Login"} element={<Login/>}></Route>
+              <Route path={"/register"} element={<Register/>}></Route>
               <Route path="/Strefa-klienta" element={<User apartments={rooms}/>}></Route>
           </Routes>
           <Footer/>

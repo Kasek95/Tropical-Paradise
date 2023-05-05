@@ -1,0 +1,78 @@
+@import "../sass/colors";
+
+.loginMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #0f0c29,#302b63,#24243e);
+
+   .formContainer {
+     display: flex;
+     justify-content: center;
+     padding: 5px;
+     .form {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       width: 350px;
+       height: 500px;
+       background-image: url("../../assets/vectezy.jpg");
+       background-size: cover;
+       background-position: center;
+       box-shadow: 5px 20px 50px #000;
+       border-radius: 40px;
+       color: white;
+       font-family: $openSans;
+        h2 {
+
+          font-size: 3rem;
+          margin-bottom: 20px;
+        }
+       .inputBox {
+         display: flex;
+         flex-direction: column;
+         width: 300px;
+         margin-bottom: 20px;
+          label {
+
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+          }
+         input {
+           width: 100%;
+           height: 30px;
+           padding-left: 10px;
+           background: none;
+           border: none;
+           border-bottom: 1px solid white;
+           color: white;
+           outline: none;
+         }
+         input::placeholder{
+           color: white;
+         }
+
+       }
+       .btnLogin {
+         border: 2px solid white;
+         background: none;
+         border-radius: 5px;
+         color: white;
+         cursor: pointer;
+         text-transform: uppercase;
+         padding: 5px;
+         margin-bottom: 20px;
+       }
+       span {
+         font-size: 1.3rem;
+          a {
+            color: white;
+            text-decoration: none;
+          }
+       }
+     }
+   }
+}

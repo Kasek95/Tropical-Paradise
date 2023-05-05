@@ -42,7 +42,7 @@ const Header = ({apartments}) => {
                                     to={"/Register"}>Register
                                 </Link>
                                 <Link
-                                    to={"/Pulpit"}>Pulpit
+                                    to={"/Strefa-klienta"}>Pulpit
                                 </Link>
                             </div>
                         </div>

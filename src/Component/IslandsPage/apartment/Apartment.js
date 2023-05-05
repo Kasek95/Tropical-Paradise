@@ -66,25 +66,11 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion}) => {
                      <span>{singielApartment.RomInfo}</span>
 
                      <section className={"opinion"}>
-
                          {opinionApartment.length === 0 ? null :
                              <section className={"apartmentOpinion"}>
-                                 <Slider {...settings2}>
-                                     {opinionApartment.map(el => (
-                                         <div key={el.id} className={"opinionCard"}>
-                                             <BsPersonCircle className={"avatar"}/>
-                                             <IoIosQuote className={"quot"}/>
-                                             <span className={"opinion"}>{el.opinia}</span>
-                                             <div className={"infoContainer"}>
-                                                 <span>{el.name}</span>
-                                                 <span>Ocena:{el.rating} <FaStar className={"star"}/></span>
-                                             </div>
-                                         </div>
-                                     ))}
-                                 </Slider>
+
                              </section>
                          }
-
                      </section>
 
 
