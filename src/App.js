@@ -14,6 +14,7 @@ import Register from "./Component/register/Register";
 function App() {
     const [rooms, setRooms] = useState();
     const [opinions, setOpinions] = useState()
+    const [reservation,setReservation] = useState()
 
     useEffect(() => {
         getRooms();
@@ -21,6 +22,9 @@ function App() {
 
     useEffect(()=> {
         getOpinion()
+    },[])
+    useEffect(() =>{
+        getReservation()
     },[])
 
     async function getRooms() {
@@ -32,6 +36,11 @@ function App() {
         setOpinions(data)
     }
 
+    async function getReservation() {
+        const {data} = await  supabase.from("book").select()
+        setReservation(data)
+    }
+
     return (
       <>
           <Header apartments={rooms}/>
@@ -39,7 +48,7 @@ function App() {
               <Route path="*" element={<Navigate to= "/" />}> </Route>
               <Route path="/" element={<Home/>}></Route>
               <Route path="/islands" element={<IslandPage getRooms={getRooms} apartments={rooms}/>}></Route>
-              <Route path={`/islands/apartment/:apartmentId`} element={<Apartment opinions={opinions} getOpinion={getOpinion} getRooms={getRooms} apartments={rooms}/>}></Route>
+              <Route path={`/islands/apartment/:apartmentId`} element={<Apartment getReservation={getReservation} reservation={reservation} opinions={opinions} getOpinion={getOpinion} getRooms={getRooms} apartments={rooms}/>}></Route>
               <Route path="/adminPanel" element={<AdminPanel/>}></Route>
               <Route path={"/Login"} element={<Login/>}></Route>
               <Route path={"/register"} element={<Register/>}></Route>

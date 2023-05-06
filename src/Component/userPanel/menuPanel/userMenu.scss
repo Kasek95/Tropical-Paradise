@@ -1,7 +1,6 @@
 .menu__user {
-  position: absolute;
-  top:0;
-  left: 0;
+
+
   height: 100vh;
   background-color: #10437c;
   margin: auto 0;
@@ -19,6 +18,7 @@
         margin-bottom: 10px;
       }
      span {
+       position: relative;
        color:white;
      }
      .btn {
@@ -32,8 +32,8 @@
      }
      .liked {
        position: absolute;
-       top:10px;
-       right: 40px;
+       top:-40px;
+       right: 0;
        display: flex;
        justify-content:center ;
        align-items: center;

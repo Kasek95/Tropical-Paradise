@@ -1,20 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import Slider from "react-slick";
 import {useParams,Link} from "react-router-dom";
 import {AiOutlineHeart} from "react-icons/ai"
 import {AiFillHeart} from "react-icons/ai"
 import {FaStar} from "react-icons/fa"
-import {IoIosQuote} from "react-icons/io"
-import {BsPersonCircle} from "react-icons/bs"
-import {settings,settings2} from "./settings";
+import {useSelector} from "react-redux"
+import {settings} from "./settings";
 import { DatePicker } from 'antd';
 import supabase from "../../../supabase";
 import "./apartment.scss"
 
 
-const Apartment = ({apartments,getRooms, opinions, getOpinion}) => {
+const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getReservation}) => {
     const {apartmentId} = useParams()
     const {RangePicker} = DatePicker
+    const user = useSelector((state) => state.user.value.user)
+    const [startDate, setStartDate] = useState()
+    const [endDate, setEndDate] = useState()
 
 
 
@@ -32,9 +34,28 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion}) => {
 
     if(!apartments) return null
     if(!opinions) return null
+    if(!reservation) return null
+
+
     const singielApartment = apartments.find(el => el.id == apartmentId)
     const opinionApartment = opinions.filter(el => el.apartmentId === singielApartment.id)
     const otherApartmentsInIsland = apartments.filter(el => el.id !== singielApartment.id && el.Island === singielApartment.Island)
+    const reservationToSingielApartment = reservation.filter(el => el.apartmentId === singielApartment.id)
+
+    const bookApartment = async(e) => {
+        e.preventDefault()
+        await supabase.from("book").insert({
+            StartDate: startDate,
+            EndDate: endDate,
+            apartmentId: singielApartment.id
+        })
+        getReservation()
+    }
+
+    const handleDateChange = (date,dateString) => {
+        setStartDate(dateString[0])
+        setEndDate(dateString[1])
+    }
 
 
     return (
@@ -50,31 +71,39 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion}) => {
                          </div>
                          <section className={"reservation"}>
                              <h4>Zarezerwuj</h4>
-                             <RangePicker onChange={""}
+                             <RangePicker onChange={handleDateChange}
                                           disabledDate={(current) => {
                                               const now = new Date(current).setHours(0,0,0,0)
-                                              //const reservations = activeReservations.map(x => ({ start: new Date(x.startDate).setHours(0,0,0,0), end : new Date(x.endDate ).setHours(0,0,0,0)}))
-                                              // return reservations.some(x => now >= x.start && now <= x.end);
+                                              const reservations = reservationToSingielApartment.map(x => ({ start: new Date(x.StartDate).setHours(0,0,0,0), end : new Date(x.EndDate ).setHours(0,0,0,0)}))
+                                              return reservations.some(x => now >= x.start && now <= x.end);
                                           }}>
                              </RangePicker>
                              <span className={"infoRom"}>Cena za noc: {singielApartment.RomPrice} Zł</span>
                              <span className={"infoRom"}>Ilość gwiazdek: <FaStar/>{singielApartment.rating}</span>
-                             <button>Zamów Nocleg</button>
+                             <button onClick={bookApartment} disabled={user !== null ? "" :"disabled"} type={"submit"}>Zamów Nocleg</button>
                          </section>
                      </section>
                      <h3>Opis Apartamentu:</h3>
-                     <span>{singielApartment.RomInfo}</span>
+                     <span className={"info"}>{singielApartment.RomInfo}</span>
 
-                     <section className={"opinion"}>
+
                          {opinionApartment.length === 0 ? null :
                              <section className={"apartmentOpinion"}>
+                                  <ul className={"listOfOpinion"}>
+                                      {opinionApartment.map(el => (
+                                          <li key={el.id} className={"opinionContainer"}>
+                                              <p className={"rating"}> <FaStar className={"star"}/>{el.rating}</p>
+                                              <h5>{el.name}</h5>
+                                              <span className={"userOpinion"}>{el.opinia}</span>
+                                          </li>
+                                      ))}
+                                  </ul>
 
                              </section>
                          }
-                     </section>
 
-
-                     <section className={"otherApartments"}>
+                        <button className={"addOpinion"}>Dodaj opinię</button>
+                         <section className={"otherApartments"}>
                             <Slider {...settings}>
                                 {otherApartmentsInIsland.map(el => (
                                     <div key={el.id} className={"romContainer"}>

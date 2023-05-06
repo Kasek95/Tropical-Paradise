@@ -6,13 +6,14 @@
   width: 100%;
   height: 100vh;
   background: linear-gradient(to bottom, #0f0c29,#302b63,#24243e);
+  padding: 5px;
    .registration {
      display: flex;
      justify-content: center;
      align-items: center;
      flex-direction: column;
      width: 350px;
-     height: 500px;
+     min-height: 500px;
      background-image: url("../../assets/vectezy.jpg");
      background-size: cover;
      background-position: center;
@@ -28,7 +29,7 @@
        position: relative;
        display: flex;
        flex-direction: column;
-       margin-bottom: 20px;
+       margin-bottom: 5px;
          label {
            margin-bottom: 10px;
          }
@@ -53,6 +54,40 @@
        }
        .errorText {
          color: red;
+       }
+     }
+     .customCheckBox {
+       position: relative;
+       display: flex;
+       flex-direction: column;
+       .checkBox {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+       .errorText {
+         color: red;
+       }
+     }
+     .btnRegister {
+       border: 2px solid white;
+       background: none;
+       border-radius: 5px;
+       color: white;
+       cursor: pointer;
+       text-transform: uppercase;
+       padding: 5px;
+       margin-bottom: 10px;
+       margin-top: 10px;
+     }
+     .registerSpan {
+       display: flex;
+       font-size: 1.3rem;
+       gap: 10px;
+       margin-bottom: 20px;
+       a {
+         color: white;
+         text-decoration: none;
        }
      }
    }

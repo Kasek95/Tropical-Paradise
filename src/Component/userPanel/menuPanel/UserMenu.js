@@ -6,9 +6,9 @@ import {FaWallet} from "react-icons/fa";
 import "./userMenu.scss"
 
 
-const UserMenu = ({apartments}) => {
+const UserMenu = ({user,apartments}) => {
 
-    const [login, setLogin] = useState(false)
+
 
     if(!apartments) return null
     return (
@@ -20,23 +20,29 @@ const UserMenu = ({apartments}) => {
                 </div>
                 <div className={"box"}>
                     <AiFillHeart  className={"icon"}/>
-                    <span>ulubione</span>
-                    {apartments.filter(el => el.RomLiked === true).length === 0 ? null :  <span className={"liked"}>{apartments.filter(el=> el.RomLiked === true).length}</span>}
+                    <span>ulubione   {apartments.filter(el => el.RomLiked === true).length === 0 ? null :  <span className={"liked"}>{apartments.filter(el=> el.RomLiked === true).length}</span>}</span>
+
 
                 </div>
 
                 <div  className={"box"}>
-                    <BsCalendar3  className={login ?"icon" : "icon grey"}/>
+                    <BsCalendar3  className={user !== null  ?"icon" : "icon grey"}/>
                     <button
-                        className={login ? "btn" : "btn grey"}
+                        disabled={user !== null ? "" : "disabled"}
+                        type={"button"}
+                        className={user !== null ? "btn" : "btn grey"}
                     >
                         Twoje Rezerwacje
                     </button>
                 </div>
 
                 <div className={"box"}>
-                    <FaWallet  className={login ? "icon" : "icon grey"}/>
-                    <button className={login ? "btn" : "btn grey"}>
+                    <FaWallet  className={user !== null ? "icon" : "icon grey"}/>
+                    <button
+                        disabled={user !== null ? "" : "disabled"}
+                        type={"button"}
+                        className={user !== null ? "btn" : "btn grey"}
+                    >
                         Płatności
                     </button>
                 </div>

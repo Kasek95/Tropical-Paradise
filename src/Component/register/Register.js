@@ -2,6 +2,7 @@ import React from "react";
 import "./register.scss"
 import {Formik,Form} from "formik";
 import CustomInput from "./customInput/CustomInput";
+import CustomCheckBox from "./customCheckBox/CustomCheckBox";
 import {advancedSchema} from "./validationUser";
 import {Link, Navigate} from "react-router-dom";
 import supabase from "../../supabase";
@@ -19,7 +20,7 @@ const Register = () => {
             options: {
                 data: {
                     userName: values.user,
-                    userType: values.adminKey === "Admin" ? "Admin" : "User"
+                    userType: "User"
                 },
             },
         })
@@ -38,6 +39,7 @@ const Register = () => {
                         email: "",
                         pass1: "",
                         pass2: "",
+                        acceptedTos: false,
 
                     }}
                     validationSchema={advancedSchema}
@@ -77,7 +79,6 @@ const Register = () => {
                                 />
                             </div>
                             <div className={"customInput"}>
-
                                 <i className="lock fa-solid fa-lock"></i>
                                 <CustomInput
                                     label={`Repeat password`}
@@ -87,11 +88,16 @@ const Register = () => {
                                 />
                             </div>
 
+                            <div className={"customCheckBox"}>
+                                <CustomCheckBox type={"checkbox"} name={"acceptedTos"} />
 
-                            <div className={"btnPanel"}>
-                                <button className={"btn"}  type={"submit"}>Register</button>
                             </div>
-                            <span>If u are Register <Link to={"/Login"}>Login</Link></span>
+
+
+
+                                <button className={"btnRegister"}  type={"submit"}>Register</button>
+
+                            <span className={"registerSpan"}>Jeśli jesteś zarejstrowany<Link to={"/Login"}>Login</Link></span>
                         </Form>
                     )}
                 </Formik>
