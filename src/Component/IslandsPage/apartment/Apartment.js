@@ -20,6 +20,7 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
 
 
 
+
     const setToLike = async (id) => {
         const findApartments = apartments.find(el => el.id === id)
 
@@ -47,9 +48,12 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
         await supabase.from("book").insert({
             StartDate: startDate,
             EndDate: endDate,
-            apartmentId: singielApartment.id
+            apartmentId: singielApartment.id,
+            userId: user.id
         })
         getReservation()
+        getRooms()
+        getOpinion()
     }
 
     const handleDateChange = (date,dateString) => {
@@ -75,7 +79,7 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
                                           disabledDate={(current) => {
                                               const now = new Date(current).setHours(0,0,0,0)
                                               const reservations = reservationToSingielApartment.map(x => ({ start: new Date(x.StartDate).setHours(0,0,0,0), end : new Date(x.EndDate ).setHours(0,0,0,0)}))
-                                              return reservations.some(x => now >= x.start && now <= x.end);
+                                              return reservations.some(x => now >= (x.start) && now <= x.end);
                                           }}>
                              </RangePicker>
                              <span className={"infoRom"}>Cena za noc: {singielApartment.RomPrice} Zł</span>

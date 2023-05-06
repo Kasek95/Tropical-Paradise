@@ -2,5 +2,38 @@
   display: flex;
   height: 100vh;
   width: 100%;
-  z-index: 10;
+
+    .userContainer {
+     position: relative;
+     height: 1100px;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     margin-top: 100px;
+      @media (max-width: 1338px) {
+        display: flex;
+        flex-direction: column;
+      }
+     .userAction {
+       display: none;
+       background: black;
+       margin: 100px auto;
+       height: 1000px;
+       @media (max-width: 1465px) {
+         margin-left: 128px;
+       }
+       @media (max-width: 1338px) {
+         margin-left: unset;
+         margin-top: 100px;
+         width: 100%;
+       }
+       .reservationList {
+         color: white;
+       }
+     }
+     .show {
+       display: flex;
+     }
+   }
 }

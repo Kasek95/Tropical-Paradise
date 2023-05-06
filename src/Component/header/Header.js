@@ -4,14 +4,17 @@ import "./header.scss"
 import { GiPalmTree } from "react-icons/gi";
 import {FaBars} from "react-icons/fa"
 import {VscChromeClose} from "react-icons/vsc"
+import {useSelector} from "react-redux";
+
 
 
 const Header = ({apartments}) => {
     const [showMenu,setShowMenu] = useState(false)
     const [showLogin, setShowLogin] = useState(false)
+    const user = useSelector((state) => state.user.value.user)
 
 
-    if(!apartments) return null
+    if(!apartments ) return null
     return (
         <>
             <header>
@@ -25,6 +28,7 @@ const Header = ({apartments}) => {
                             <a onClick={()=> setShowMenu(false)} href={"#contact"}>Contact</a>
                             <Link onClick={()=> setShowMenu(false)} to={"/islands"}>Islands</Link>
                             <Link onClick={()=> setShowMenu(false)} to={"/Strefa-klienta"}>Favorites({apartments.filter(el => el.RomLiked === true).length})</Link>
+                            {user === null ? null : <Link to={"/adminPanel"} className={user.email === "admin@gmail.com" ? "admin show" : "admin"}>Admin</Link>}
                         </nav>
                         <div
                             onClick={() => setShowLogin(!showLogin)}

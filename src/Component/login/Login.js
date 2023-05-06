@@ -26,7 +26,12 @@ const Login = ()=> {
         } else {
             console.log(error)
         }
-        navigate("/Strefa-klienta")
+
+        if(data.user.email === "admin@gmail.com"){
+            navigate("/adminPanel")
+        } else {
+            navigate("/Strefa-klienta")
+        }
         setPassword("")
         setEmail("")
     }
