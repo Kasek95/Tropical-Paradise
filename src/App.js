@@ -55,7 +55,7 @@ function App() {
               <Route path="/" element={<Home/>}></Route>
               <Route path="/islands" element={<IslandPage getRooms={getRooms} apartments={rooms}/>}></Route>
               <Route path={`/islands/apartment/:apartmentId`} element={<Apartment getReservation={getReservation} reservation={reservation} opinions={opinions} getOpinion={getOpinion} getRooms={getRooms} apartments={rooms}/>}></Route>
-              <Route path="/adminPanel" element={<AdminPanel  apartments={rooms} opinions={opinions} reservation={reservation} getOpinion={getOpinion}/>}></Route>
+              <Route path="/adminPanel" element={<AdminPanel getApartments={getRooms}  apartments={rooms} opinions={opinions} reservation={reservation} getOpinion={getOpinion}/>}></Route>
               <Route path={"/Login"} element={<Login/>}></Route>
               <Route path={"/register"} element={<Register/>}></Route>
               <Route path="/Strefa-klienta" element={<User reservation={reservation} apartments={rooms}/>}></Route>

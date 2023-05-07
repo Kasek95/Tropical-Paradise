@@ -12,7 +12,7 @@ import AddApartmentForm from "./formAddApartment/AddApartmentForm";
 import ReactPaginate from "react-paginate";
 
 
-const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,apartmentLength}) => {
+const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,apartmentLength,getApartments}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const user = useSelector((state) => state.user.value.user)
@@ -33,12 +33,15 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
         navigate("/")
     }
 
-
     const changePage = ({selected}) => {
         setPageNumber(selected)
     }
     const changeApartmentPage = ({selected}) => {
         setApartmentPage(selected)
+    }
+    const setAddApartmentDisplay = () => {
+        setAddApartment(false)
+        setDisplayApartmentPanel(true)
     }
 
 
@@ -69,11 +72,11 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     const apartmentCount = Math.ceil(apartments.length / apartmentsPerPage);
     const displayOpinions = opinions.slice(pageVisited, pageVisited + opinionsPerPage)
         .map((opinion) => (
-            <Opinion getOpinion={getOpinion} opinion={opinion}/>
+            <Opinion key={opinion.id} getOpinion={getOpinion} opinion={opinion}/>
         ))
     const displayApartments = apartments.slice(apartmentVisited, apartmentVisited + apartmentsPerPage)
         .map(apartment => (
-            <SingielApartment apartment={apartment} />
+            <SingielApartment getApartments={getApartments} key={apartment.id} apartment={apartment} />
         ))
 
 
@@ -130,7 +133,7 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
                     </section>
                     <section className={addApartment ? "addApartment" : "addApartment hide"}>
                         <article className={"addApartmentContainer"}>
-                            <AddApartmentForm/>
+                            <AddApartmentForm cancelForm={setAddApartmentDisplay} getApartments={getApartments}/>
                         </article>
                     </section>
                 </section>
