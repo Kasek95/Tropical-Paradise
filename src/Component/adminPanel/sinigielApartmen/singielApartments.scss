@@ -18,5 +18,13 @@
     display: flex;
     gap: 10px;
     margin-right: 10px;
+     .btn {
+       border-radius: 10px;
+       border: 1px solid white;
+       background: none;
+       color: white;
+       font-size: 1.3rem;
+       padding: 5px;
+     }
   }
 }

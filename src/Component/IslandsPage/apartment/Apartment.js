@@ -11,15 +11,13 @@ import supabase from "../../../supabase";
 import "./apartment.scss"
 
 
+
 const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getReservation}) => {
     const {apartmentId} = useParams()
-    const {RangePicker} = DatePicker
+    const {RangePicker, defaultValue} = DatePicker
     const user = useSelector((state) => state.user.value.user)
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
-
-
-
 
     const setToLike = async (id) => {
         const findApartments = apartments.find(el => el.id === id)
@@ -54,6 +52,7 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
         getReservation()
         getRooms()
         getOpinion()
+        defaultValue()
     }
 
     const handleDateChange = (date,dateString) => {

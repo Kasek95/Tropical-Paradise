@@ -1,0 +1,32 @@
+.opinionContainer {
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid darkgray;
+  margin-bottom: 5px;
+  min-height: 100px;
+  width: 100%;
+  padding: 5px;
+  list-style: none;
+
+
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .opinionDescription {
+    max-width: 95%;
+  }
+
+  .deleteOpinion {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+}
