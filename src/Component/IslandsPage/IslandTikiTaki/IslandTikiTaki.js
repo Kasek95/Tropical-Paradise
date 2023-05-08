@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 import {FaStar} from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 const IslandTikiTaki = ({apartments,setToLike}) => {
 
@@ -19,7 +20,10 @@ const IslandTikiTaki = ({apartments,setToLike}) => {
                             <span>Wyspa {element.Island}</span>
                             <span><FaStar/> {element.rating}</span>
                         </div>
-                        <span className={"price"}>Cena za noc: {element.RomPrice} zł</span>
+                        <div className={"ofert"}>
+                            <span className={"price"}>Cena za noc: {element.RomPrice} zł</span>
+                            <button className={"checkOfert"}><Link to={`/islands/apartment/${element.id}`}>Sprawdź Ofertę</Link></button>
+                        </div>
                     </div>
                 ))
             }

@@ -9,6 +9,7 @@ import {settings} from "./settings";
 import { DatePicker } from 'antd';
 import supabase from "../../../supabase";
 import "./apartment.scss"
+import AddOpinionForm from "./addOpinionForm/AddOpinionForm";
 
 
 
@@ -18,6 +19,10 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
     const user = useSelector((state) => state.user.value.user)
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
+    const [isDisplayForm, setIsDisplayForm] = useState(false)
+    const setCloseForm = () => {
+        setIsDisplayForm(false)
+    }
 
     const setToLike = async (id) => {
         const findApartments = apartments.find(el => el.id === id)
@@ -31,9 +36,8 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
         getRooms()
     }
 
-    if(!apartments) return null
-    if(!opinions) return null
-    if(!reservation) return null
+    if(!apartments || !opinions || !reservation) return null
+
 
 
     const singielApartment = apartments.find(el => el.id == apartmentId)
@@ -101,11 +105,12 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
                                           </li>
                                       ))}
                                   </ul>
-
                              </section>
                          }
-
-                        <button className={"addOpinion"}>Dodaj opinię</button>
+                         <section className={isDisplayForm ? "addOpinionFormContainer show" : "addOpinionFormContainer"}>
+                             <AddOpinionForm apartmentId={singielApartment.id} setIsDisplayForm={setCloseForm}/>
+                         </section>
+                        <button onClick={()=> setIsDisplayForm(true)} className={"addOpinion"}>Dodaj opinię</button>
                          <section className={"otherApartments"}>
                             <Slider {...settings}>
                                 {otherApartmentsInIsland.map(el => (
