@@ -68,13 +68,13 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     if(!user) {
         navigate("/")
     }
-    const pageCount = Math.ceil(opinions.length / opinionsPerPage);
-    const apartmentCount = Math.ceil(apartments.length / apartmentsPerPage);
-    const displayOpinions = opinions.slice(pageVisited, pageVisited + opinionsPerPage)
+    const pageCount = Math.ceil(opinions === undefined ? 1 : opinions.length/ opinionsPerPage);
+    const apartmentCount = Math.ceil(apartments === undefined ?  1 : apartments.length / apartmentsPerPage);
+    const displayOpinions = opinions === undefined ? null : opinions.slice(pageVisited, pageVisited + opinionsPerPage)
         .map((opinion) => (
             <Opinion key={opinion.id} getOpinion={getOpinion} opinion={opinion}/>
         ))
-    const displayApartments = apartments.slice(apartmentVisited, apartmentVisited + apartmentsPerPage)
+    const displayApartments = apartments === undefined ? null : apartments.slice(apartmentVisited, apartmentVisited + apartmentsPerPage)
         .map(apartment => (
             <SingielApartment getApartments={getApartments} key={apartment.id} apartment={apartment} />
         ))

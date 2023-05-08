@@ -27,4 +27,28 @@
        padding: 5px;
      }
   }
+  .editApartment {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 111%;
+    background: white;
+    z-index: 1;
+     .closeForm {
+       position: absolute;
+       top: 10px;
+       right: 10px;
+       border: 1px solid black;
+       padding: 5px;
+       border-radius: 50%;
+       background: none;
+
+     }
+
+  }
+  .show {
+    display: flex;
+  }
 }

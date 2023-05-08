@@ -15,12 +15,6 @@ function App() {
     const [rooms, setRooms] = useState();
     const [opinions, setOpinions] = useState()
     const [reservation,setReservation] = useState()
-    const [apartmentLength, setApartmentLength] = useState()
-    const [opinionsLength, setOpinionsLength] = useState()
-
-
-
-
 
     useEffect(() => {
         getRooms();
