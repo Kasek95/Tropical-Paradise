@@ -59,8 +59,7 @@ const AddOpinionForm = ({setIsDisplayForm,apartmentId,getOpinion}) => {
 
                 <div className={"customInput"}>
                     <CustomInput
-
-                        label={"Picture of products"}
+                        label={"Nazwa użytkownika"}
                         name={"Name"}
                         type={"text"}
                         placeholder={"Wpisz nazwę użytkownika"}
