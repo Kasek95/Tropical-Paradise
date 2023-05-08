@@ -30,22 +30,102 @@
   .editApartment {
     display: none;
     position: absolute;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
-    height: 111%;
-    background: white;
+    height: 115%;
+    backdrop-filter: blur(15px);
     z-index: 1;
-     .closeForm {
-       position: absolute;
-       top: 10px;
-       right: 10px;
-       border: 1px solid black;
-       padding: 5px;
-       border-radius: 50%;
-       background: none;
+    .form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      max-width: 400px;
+      min-height: 500px;
+      padding: 5px;
+      border: 1px solid white;
+      border-radius: 10px;
+       h2{
+         text-align: center;
+         margin-bottom: 20px;
+       }
+      .closeForm {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: 1px solid white;
+        padding: 5px;
+        border-radius: 50%;
+        background: none;
+         i {
+           color: white;
+         }
+      }
+      .customInput {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+         label {
+           margin-bottom: 10px;
+         }
+        input {
+          outline: none;
+          height: 30px;
+          padding-left: 10px;
+          color: white;
+          background: none;
+          border: none;
+          border-bottom: 1px solid white;
+        }
+        input::placeholder {
+          color: white;
+        }
+      }
+      .customTextArea {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+         label{
+           margin-bottom: 10px;
+         }
+        textarea {
+          background: none;
+          resize: unset;
+          color: white;
+        }
+      }
+      .customSelect {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
 
-     }
+         label {
+           margin-bottom: 10px;
+         }
+         select {
+           color: white;
+           background: none;
+           border: 1px solid white;
+            option {
+              color: black;
+            }
+         }
+      }
+      .saveBtn {
+        width: 100px;
+        height: 30px;
+        background: none;
+        border-radius: 10px;
+        border: 1px solid white;
+        text-transform: uppercase;
+        color: white;
+        margin: 20px auto;
+      }
+    }
 
   }
   .show {
