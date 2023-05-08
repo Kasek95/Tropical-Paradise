@@ -1,13 +1,13 @@
 import React from "react";
 import "./addOpinionForm.scss"
 import {Form, Formik} from "formik";
-import {addApartmentValidation} from "../../../adminPanel/formAddApartment/validationAddApartment";
+import {addOpinionValidation} from "./addOpinionValidation";
 import CustomSelect from "../../../adminPanel/formAddApartment/CustomSelect";
 import CustomInput from "../../../register/customInput/CustomInput";
 import CustomTextArea from "../../../adminPanel/formAddApartment/CustomTextArea";
 import supabase from "../../../../supabase";
 
-const AddOpinionForm = ({setIsDisplayForm,apartmentId}) => {
+const AddOpinionForm = ({setIsDisplayForm,apartmentId,getOpinion}) => {
     const closeForm = () => {
         setIsDisplayForm()
     }
@@ -15,13 +15,15 @@ const AddOpinionForm = ({setIsDisplayForm,apartmentId}) => {
     const onSubmit = async (values,actions) => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         const {Name,Rating,description} = values
-        await supabase.from("Roms").insert({
+        await supabase.from("opinions").insert({
             apartmentId: apartmentId,
             rating: Rating,
             opinia: description,
             name: Name
         });
+        getOpinion()
         actions.resetForm()
+        closeForm()
     }
 
     return (
@@ -31,7 +33,7 @@ const AddOpinionForm = ({setIsDisplayForm,apartmentId}) => {
             Rating: "",
             description: "",
         }}
-        validationSchema={addApartmentValidation}
+        validationSchema={addOpinionValidation}
         onSubmit={onSubmit}
 
     >
@@ -68,7 +70,7 @@ const AddOpinionForm = ({setIsDisplayForm,apartmentId}) => {
                 <div className={"customTextArea"}>
                     <CustomTextArea
                         label={"Opis apartamentu"}
-                        name={"RomInfo"}
+                        name={"description"}
                         placeholder={"Napisz opis apartamentu"}
                     />
                 </div>

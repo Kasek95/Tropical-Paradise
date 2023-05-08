@@ -12,7 +12,7 @@ const CustomSelect = ({ label, ...props }) => {
                 {...props}
                 className={"selectBox"}
             />
-            {meta.touched && meta.error && <div className="error">{meta.error}</div>}
+            {meta.touched && meta.error && <div className="errorText">{meta.error}</div>}
         </>
     );
 };

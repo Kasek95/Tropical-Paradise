@@ -108,7 +108,7 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
                              </section>
                          }
                          <section className={isDisplayForm ? "addOpinionFormContainer show" : "addOpinionFormContainer"}>
-                             <AddOpinionForm apartmentId={singielApartment.id} setIsDisplayForm={setCloseForm}/>
+                             <AddOpinionForm getOpinion={getOpinion} apartmentId={singielApartment.id} setIsDisplayForm={setCloseForm}/>
                          </section>
                         <button onClick={()=> setIsDisplayForm(true)} className={"addOpinion"}>Dodaj opinię</button>
                          <section className={"otherApartments"}>
