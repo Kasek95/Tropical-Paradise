@@ -11,7 +11,7 @@ import {useNavigate} from "react-router-dom";
 import {VscChromeClose} from "react-icons/vsc";
 
 
-const UserMenu = ({user,apartments,setReservation}) => {
+const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit}) => {
       const dispatch = useDispatch()
       const navigate = useNavigate()
       const [showUserMenu, setShowUserMenu] = useState()
@@ -28,15 +28,13 @@ const UserMenu = ({user,apartments,setReservation}) => {
             <div className={"menu__user"}>
                 {showUserMenu ? <VscChromeClose className={"hamburger"} onClick={()=> setShowUserMenu(false)}/>  : <FaBars className={"hamburger"} onClick={()=> setShowUserMenu(true)}/>}
                 <div className={showUserMenu ? "userNav show" : "userNav"}>
-                    <div className={"box"}>
+                    <div onClick={displayPulpit} className={"box"}>
                         <HiOutlineSquares2X2 className={"icon"}/>
                         <span>Pulpit</span>
                     </div>
-                    <div className={"box"}>
+                    <div onClick={showLikedRoms} className={"box"}>
                         <AiFillHeart  className={"icon"}/>
                         <span>ulubione   {apartments.filter(el => el.RomLiked === true).length === 0 ? null :  <span className={"liked"}>{apartments.filter(el=> el.RomLiked === true).length}</span>}</span>
-
-
                     </div>
 
                     <div  className={"box"}>

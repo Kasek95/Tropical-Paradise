@@ -17,7 +17,7 @@ const IslandMain = ({apartments,getRooms}) => {
     const setToLike = async (id) => {
         const findApartments = apartments.find(el => el.id === id)
 
-        const {data, error}= await supabase
+        await supabase
             .from("Roms")
             .update({
                 RomLiked: !findApartments.RomLiked

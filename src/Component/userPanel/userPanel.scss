@@ -2,6 +2,7 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
+  background-color: #BDDDF1;
 
     .userContainer {
      position: relative;
@@ -19,7 +20,7 @@
        display: none;
        background: black;
        margin: 100px auto;
-       height: 1000px;
+       min-height: 1000px;
        @media (max-width: 1465px) {
          margin-left: 128px;
        }
@@ -28,17 +29,15 @@
          margin-top: 100px;
          width: 100%;
        }
-       .reservationList {
-         color: white;
-       }
+
      }
       .pulpit {
         display: none;
+        flex-direction: column;
+        justify-content: center;
         margin: 100px auto;
         min-height: 1000px;
-        border: 2px solid #2e2e2e;
         padding: 10px;
-        background-color: lightgrey;
         @media (max-width: 1465px) {
           margin-left: 128px;
         }
@@ -51,7 +50,7 @@
         .containerClient {
           display: flex;
           gap: 20px;
-          padding: 10px;
+          z-index: 5;
           width: 100%;
           @media (max-width: 768px){
             flex-direction: column;
@@ -85,6 +84,8 @@
                text-align: center;
                background-color: #1e5085;
                border: none;
+               cursor: pointer;
+
                 a {
                   color: white;
                   text-decoration: none;
@@ -120,6 +121,7 @@
                 right: 0;
                 bottom: 0;
                 color: #205189;
+                cursor: pointer;
               }
             }
             .borderBottom {
@@ -143,9 +145,120 @@
             }
           }
         }
+        .moreOfert {
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          width: 100%;
+          height: auto;
+          padding: 10px;
+          overflow: hidden;
+          margin-top: 100px;
+           h3 {
+             margin-bottom: 20px;
+           }
+          .sliderOfert {
+            position: relative;
+            display: flex;
+            width: 100%;
+            min-height: 300px;
+            white-space: nowrap;
+            .slide-carousel {
+              display: flex;
+              gap: 10px;
+              padding: 5px;
+              animation: slide 35s infinite linear;
+
+              .ofertContainer {
+              width: 300px;
+              min-height: 350px;
+
+              img {
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
+                margin-bottom: 10px;
+              }
+
+              h4 {
+                margin-bottom: 20px;
+              }
+
+              .infoCont {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                  margin-bottom: 10px;
+                }
+              }
+
+              .checkOfert {
+                padding: 5px;
+                background-color: #1e5085;
+                border: none;
+                border-radius: 10px;
+                outline: none;
+
+                a {
+                  color: white;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          }
+          .sliderOfert:hover .slide-carousel {
+            animation-play-state: paused;
+          }
+          .sliderOfert::before, ::after {
+            position: absolute;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            content: "";
+            z-index: 2;
+
+          }
+          .sliderOfert::before {
+            left: -10px;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+          }
+          .sliderOfert::after {
+            right: -10px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+          }
+        }
+      }
+      .likedApartments {
+        display: none;
+        flex-direction: column;
+        margin: 100px auto;
+        min-height: 1000px;
+        padding: 10px;
+        @media (max-width: 1465px) {
+          margin-left: 128px;
+        }
+        @media (max-width: 1338px) {
+          margin-left: unset;
+          margin-top: 200px;
+          width: 100%;
+        }
+        h3 {
+          margin-bottom: 20px;
+        }
       }
      .show {
        display: flex;
      }
    }
+}
+
+@keyframes slide {
+  from{
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }

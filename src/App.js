@@ -52,7 +52,7 @@ function App() {
               <Route path="/adminPanel" element={<AdminPanel getApartments={getRooms}  apartments={rooms} opinions={opinions} reservation={reservation} getOpinion={getOpinion}/>}></Route>
               <Route path={"/Login"} element={<Login/>}></Route>
               <Route path={"/register"} element={<Register/>}></Route>
-              <Route path="/Strefa-klienta" element={<User reservation={reservation} apartments={rooms}/>}></Route>
+              <Route path="/Strefa-klienta" element={<User getRooms={getRooms} reservation={reservation} apartments={rooms}/>}></Route>
           </Routes>
           <Footer/>
 

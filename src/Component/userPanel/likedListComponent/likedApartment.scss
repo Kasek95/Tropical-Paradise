@@ -1,0 +1,71 @@
+.apartmentLiked {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+  .remove {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.2rem;
+    color: #d84851;
+    cursor: pointer;
+  }
+   .infoApartment {
+     display: flex;
+     flex-direction: column;
+     margin-left: 20px;
+      span {
+        margin-bottom: 5px;
+      }
+     img {
+       width: 100px;
+       height: 100px;
+       object-fit: cover;
+     }
+   }
+   .price {
+     position: relative;
+     display: flex;
+     margin-right: 20px;
+     .border {
+       width: 1px;
+       height: 100px;
+       background-color: #e7e7e7;
+     }
+     .action{
+       display: flex;
+       flex-direction: column;
+       margin-left: 10px;
+       span {
+         margin-bottom: 10px;
+         color: #d84851;
+       }
+       .removeBtn {
+         height: 50px;
+         padding: 5px;
+         background: none;
+         border:1px solid #10437c;
+         cursor: pointer;
+         a {
+           color: #10437c;
+           text-decoration: none;
+         }
+       }
+       button:hover {
+         background: #10437c;
+         a {
+           color: white;
+         }
+       }
+     }
+
+   }
+}
