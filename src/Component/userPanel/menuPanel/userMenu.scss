@@ -5,7 +5,7 @@
   height: 105vh;
   background-color: #10437c;
   margin: auto 0;
-  z-index: 5;
+
     @media (max-width: 1338px) {
       display: flex;
       height: 100px;
@@ -13,6 +13,7 @@
       position: absolute;
       align-items: center;
       top: 0;
+      z-index: 5;
     }
    @media (max-width: 425px) {
      display: flex;

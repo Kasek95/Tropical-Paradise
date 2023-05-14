@@ -7,9 +7,20 @@
   backdrop-filter: blur(0.8rem);
   padding: 10px;
   border-radius: 1rem;
-  min-width: 300px;
   margin: 20px 0;
   animation: 1s cubic-bezier(0.16, 1, 0.3, 1) cardEnter;
+   .close {
+     position: absolute;
+     top: 5px;
+     right: 5px;
+     background: none;
+     border: none;
+     cursor: pointer;
+      .icon {
+        font-size: 1.5rem;
+        color: white;
+      }
+   }
     h1 {
      font-weight: 600;
      font-size: 1.5rem;
@@ -68,5 +79,13 @@
       }
     }
   }
-
+  .Add {
+    margin: 10px 0;
+    width: 100%;
+    padding: 5px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 30px;
+    color: white;
+  }
 }

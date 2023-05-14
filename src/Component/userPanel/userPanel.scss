@@ -12,6 +12,7 @@
      align-items: center;
      justify-content: space-around;
      margin-top: 100px;
+      margin-bottom: 100px;
       @media (max-width: 1338px) {
         display: flex;
         flex-direction: column;
@@ -152,7 +153,7 @@
           flex-direction: column;
           background-color: white;
           width: 100%;
-          height: auto;
+          min-height: 400px;
           padding: 10px;
           overflow: hidden;
           margin-top: 100px;

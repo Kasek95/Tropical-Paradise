@@ -24,6 +24,9 @@ const  User = ({apartments,reservation,getRooms,getReservation,payments,getPayme
     const setDisplayCardForm = () => {
         setIsDisplayCardForm(true)
     }
+    const closeForm = () => {
+        setIsDisplayCardForm(false)
+    }
 
     const showLikedRoms = () => {
         setShowLikedApartments(true)
@@ -49,8 +52,8 @@ const  User = ({apartments,reservation,getRooms,getReservation,payments,getPayme
         setShowPulpit(false)
         setShowLikedApartments(false)
     }
-   if(!reservation) return null
-
+    const length = !payments || !user ? null : payments.filter(el => el.userId === user.id).length
+    if(!reservation) return null
     return (
         <>
 
@@ -114,9 +117,9 @@ const  User = ({apartments,reservation,getRooms,getReservation,payments,getPayme
                     </section>
                     <section className={isDisplayPayment ? "payment container show" : "payment container"}>
                         <h3>Metody Płatności</h3>
-                        {payments.length === 0 ? <PaymentInfo showCardForm={setDisplayCardForm}/> : <Card/>}
+                        {length === 0 ? <PaymentInfo closeForm={closeForm} showCardForm={setDisplayCardForm}/> : <Card getPayments={getPayments} closeForm={closeForm} showForm={setDisplayCardForm} payments={payments} user={user}/>}
                          <section className={isDisplayCardForm ? "addCardForm show" : "addCardForm"}>
-                              <CardForm/>
+                              <CardForm  closeForm={closeForm} user={user} getPayments={getPayments}/>
                          </section>
                     </section>
                 </section>

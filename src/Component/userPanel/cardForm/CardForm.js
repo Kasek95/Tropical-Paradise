@@ -1,42 +1,115 @@
 import React, {useState} from "react";
 import "./cardForm.scss";
+import Cards from 'react-credit-cards-2';
+import "react-credit-cards-2/dist/lib/styles.scss"
+import supabase from "../../../supabase";
+import Cleave from "cleave.js/react"
+import {AiOutlineCloseCircle} from "react-icons/ai"
 
-import Cleave from 'cleave.js/react';
-
-const CardForm = () => {
-    const [cardNumber, setCardNumber] = useState()
-    const [userName, setUserName] = useState()
-    const [ccv, setCcv] = useState()
-    const [year, setYear] = useState()
-    const [typeCard, setTypeCard] = useState()
-
-
-    const  onCreditCardChange = (e) => {
-        setCardNumber(e.target.value)
+const CardForm = ({user,getPayments,closeForm}) => {
+      const [name, setName] = useState("")
+      const [cardNumber, setCardNumber] = useState("")
+     const [epixry, setExpiry] = useState("")
+     const [focus,setFocus] = useState("")
+     const [ccv,setCcv] = useState("")
+    const close = () => {
+          closeForm()
+        setName("")
+        setCardNumber("")
+        setExpiry("")
+        setFocus("")
+        setCcv("")
     }
-    return (
-        <div className={"cardForm"}>
-             <h1>Dodaj Metodę Płatności</h1>
-            <div className={"input"}>
-                <label htmlFor={"user"}>Imię i Nazwisko</label>
-                <input onChange={e => setUserName(e.target.value)} name={"user"}  value={userName} placeholder="Imię i nazwisko"/>
-            </div>
-             <div className={"input"}>
-                 <label htmlFor={"cardNumber"}>Numer Karty</label>
-                 <Cleave onChange={onCreditCardChange} type={"text"} value={cardNumber} name={"cardNumber"}  options={{creditCard: true, }} placeholder="xxxx-xxxx-xxxx-xxxx"/>
-             </div>
-             <div className={"date"}>
-                 <div className={"input-date"}>
-                     <label htmlFor={"month"}>Data Ważności</label>
-                     <Cleave onChange={e => setYear(e.target.value)} name={"month"} type={"text"} options={{date: true, datePattern: ["m","y"]}} value={year}  placeholder="Miesiąc/Rok"/>
-                 </div>
 
-                 <div className={"input-date"}>
-                     <label htmlFor={"CCV"}>Kod CCV</label>
-                     <Cleave onChange={e => setCcv(e.target.value)} options={{blocks: [3]}} name={"CCV"} type={"text"} value={ccv} placeholder="Kod CCV"/>
+   const onSubmit =async(e) => {
+          e.preventDefault()
+       await supabase.from("payments").insert({
+           userOwner: name,
+           cardNumber: cardNumber,
+           cardCCV: ccv,
+           cardYear: epixry,
+           userId: user.id
+       });
+       getPayments()
+       setName("")
+       setCardNumber("")
+       setExpiry("")
+       setFocus("")
+       setCcv("")
+       closeForm()
+   }
+    return (
+         <section className={"card"}>
+             <Cards
+                 number={cardNumber}
+                 expiry={epixry}
+                 cvc={ccv}
+                 name={name}
+                 focused={focus}
+             />
+             <form onSubmit={onSubmit} className={"cardForm"}>
+                 <button onClick={close} className={"close"} type={"reset"}><AiOutlineCloseCircle className={"icon"}/></button>
+                 <h1>Dodaj Metodę Płatności</h1>
+                 <div className={"input"}>
+                     <label htmlFor={"user"}>Imię i Nazwisko</label>
+                     <input
+                         type={"text"}
+                         name={"name"}
+                         onChange={e => setName(e.target.value)}
+                         onFocus={e => setFocus(e.target.name)}
+                         value={name}
+                         placeholder="Imię i nazwisko"
+                     />
                  </div>
-             </div>
-        </div>
+                 <div className={"input"}>
+                     <label htmlFor={"cardNumber"}>Numer Karty</label>
+                     <Cleave onChange={e => setCardNumber(e.target.value)}
+                            onFocus={e => setFocus(e.target.name)}
+                            name={"number"}
+                            value={cardNumber}
+                             placeholder="xxxx-xxxx-xxxx-xxxx"
+                            options={{creditCard: true}}
+                             type={"text"}
+                         />
+
+                 </div>
+                 <div className={"date"}>
+                     <div className={"input-date"}>
+                         <label htmlFor={"month"}>Data Ważności</label>
+                         <Cleave
+                             onChange={e => setExpiry(e.target.value)}
+                             onFocus={e => setFocus(e.target.name)}
+                             name={"expiry"}
+                             type={"text"}
+                             options={{
+                                 date:true,
+                                 datePattern: ["m", "y"]
+                             }}
+                             value={epixry}
+                             placeholder="Miesiąc/Rok"
+                         />
+                     </div>
+
+                     <div className={"input-date"}>
+                         <label htmlFor={"CCV"}>Kod CCV</label>
+                         <Cleave
+                             onChange={e => setCcv(e.target.value)}
+                             onFocus={e => setFocus(e.target.name)}
+                             options={{
+                                 blocks: [3]
+                             }}
+                             name={"cvc"}
+                             type={"text"}
+                             value={ccv}
+                             placeholder="Kod CCV"
+                         />
+                     </div>
+                 </div>
+                 <button type={"submit"} className={"Add"}>Dodaj</button>
+
+             </form>
+         </section>
+
     )
 }
 

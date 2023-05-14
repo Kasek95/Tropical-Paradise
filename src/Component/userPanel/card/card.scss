@@ -1,0 +1,39 @@
+.paymentMethod {
+  width: 100%;
+  min-height: 200px;
+  padding: 5px;
+  background-color: white;
+  .method {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid darkgrey;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    .removeCard {
+      position: absolute;
+      right: 2px;
+      bottom: 5px;
+      color: white;
+      padding: 5px;
+      border-radius: 10px;
+      border: none;
+      background-color: #d84851;
+      cursor: pointer;
+    }
+  }
+  .add {
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #1e5085;
+    border: 1px solid white;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+  }
+
+}
