@@ -1,0 +1,19 @@
+.PaymentInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid white;
+   span {
+     margin-bottom: 10px;
+   }
+  .addCart {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #10437c;
+    color: white;
+    cursor: pointer;
+  }
+}

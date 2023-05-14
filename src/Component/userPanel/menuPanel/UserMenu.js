@@ -11,7 +11,7 @@ import {useNavigate} from "react-router-dom";
 import {VscChromeClose} from "react-icons/vsc";
 
 
-const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit}) => {
+const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit,displayPayment}) => {
       const dispatch = useDispatch()
       const navigate = useNavigate()
       const [showUserMenu, setShowUserMenu] = useState()
@@ -55,6 +55,7 @@ const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit})
                             disabled={user !== null && user.email !== "admin@gmail.com" ? "" : "disabled"}
                             type={"button"}
                             className={user !== null && user.email !== "admin@gmail.com" ? "btn" : "btn grey"}
+                            onClick={displayPayment}
                         >
                             Płatności
                         </button>

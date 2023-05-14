@@ -9,27 +9,43 @@ import {AiOutlineRight} from "react-icons/ai"
 import {AiOutlineUser} from "react-icons/ai"
 import Slider from "./slider/Slider";
 import LikedApartment from "./likedListComponent/LikedApartment";
+import UserReservation from "./userReservation/UserReservation";
+import PaymentInfo from "./paymentInfo/PaymentInfo";
+import Card from "./card/Card";
+import CardForm from "./cardForm/CardForm";
 
-
-const  User = ({apartments,reservation,getRooms}) => {
+const  User = ({apartments,reservation,getRooms,getReservation,payments,getPayments}) => {
     const user = useSelector((state) => state.user.value.user)
     const [showReservation, setShowReservation] = useState(false)
     const [showPulpit,setShowPulpit] = useState(true)
     const [showLikedApartments, setShowLikedApartments] = useState(false)
+    const [isDisplayPayment, setIsDisplayPayment] = useState(false)
+    const [isDisplayCardForm, setIsDisplayCardForm] = useState(false)
+    const setDisplayCardForm = () => {
+        setIsDisplayCardForm(true)
+    }
 
     const showLikedRoms = () => {
         setShowLikedApartments(true)
         setShowPulpit(false)
         setShowReservation(false)
+        setIsDisplayPayment(false)
     }
     const displayPulpit = () => {
         setShowPulpit(true)
         setShowReservation(false)
         setShowLikedApartments(false)
+        setIsDisplayPayment(false)
     }
-
     const setReservation = () => {
         setShowReservation(true)
+        setShowPulpit(false)
+        setShowLikedApartments(false)
+        setIsDisplayPayment(false)
+    }
+    const setPayment = () => {
+        setIsDisplayPayment(true)
+        setShowReservation(false)
         setShowPulpit(false)
         setShowLikedApartments(false)
     }
@@ -41,7 +57,7 @@ const  User = ({apartments,reservation,getRooms}) => {
             <main className={"UserPanel"}>
 
                 <section className={"userContainer"}>
-                    <UserMenu displayPulpit={displayPulpit} showLikedRoms={showLikedRoms} setReservation={setReservation} user={user} apartments={apartments}/>
+                    <UserMenu displayPayment={setPayment} displayPulpit={displayPulpit} showLikedRoms={showLikedRoms} setReservation={setReservation} user={user} apartments={apartments}/>
 
                     <section className={showPulpit ? "pulpit container show" : "pulpit container"}>
                         <article className={"containerClient"}>
@@ -90,13 +106,19 @@ const  User = ({apartments,reservation,getRooms}) => {
                     </section>
 
                     <section className={showReservation ? "userAction container show" : "userAction container"}>
+                        <h3>Twoje Rezerwacje</h3>
                         {user === null ? null : reservation.filter(el => el.userId === user.id)
                             .map(el => (
-                                <div className={"reservationList"} key={el.id}>{el.StartDate}</div>
+                                <UserReservation getReservation={getReservation} apartaments={apartments} reservation={el}/>
                             ))}
                     </section>
-
-
+                    <section className={isDisplayPayment ? "payment container show" : "payment container"}>
+                        <h3>Metody Płatności</h3>
+                        {payments.length === 0 ? <PaymentInfo showCardForm={setDisplayCardForm}/> : <Card/>}
+                         <section className={isDisplayCardForm ? "addCardForm show" : "addCardForm"}>
+                              <CardForm/>
+                         </section>
+                    </section>
                 </section>
             </main>
         </>

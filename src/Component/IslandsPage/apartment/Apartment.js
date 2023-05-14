@@ -56,7 +56,7 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
         getReservation()
         getRooms()
         getOpinion()
-        defaultValue()
+
     }
 
     const handleDateChange = (date,dateString) => {

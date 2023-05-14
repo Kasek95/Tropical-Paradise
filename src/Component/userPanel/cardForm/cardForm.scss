@@ -1,0 +1,72 @@
+.cardForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa, 1px 1px 2px #555;
+  backdrop-filter: blur(0.8rem);
+  padding: 10px;
+  border-radius: 1rem;
+  min-width: 300px;
+  margin: 20px 0;
+  animation: 1s cubic-bezier(0.16, 1, 0.3, 1) cardEnter;
+    h1 {
+     font-weight: 600;
+     font-size: 1.5rem;
+     color: #1d005f;
+     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+   }
+   .input {
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 10px;
+      label {
+        color: white;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      input {
+        height: 30px;
+        padding-left: 10px;
+        background: none;
+        border: none;
+        border-bottom: 1px dashed white;
+        outline: none;
+        color: white;
+      }
+     input::placeholder {
+       text-transform: uppercase;
+       color: white;
+     }
+   }
+  .date {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    .input-date {
+      display: flex;
+      flex-direction: column;
+       label {
+         color: white;
+         font-size: 1.2rem;
+         margin-bottom: 10px;
+       }
+      input {
+        height: 30px;
+        width: 100px;
+        padding-left: 10px;
+        background: none;
+        border: none;
+        border-bottom: 1px dashed white;
+        outline: none;
+        color: white;
+      }
+      input::placeholder {
+        text-transform: uppercase;
+        color: white;
+      }
+    }
+  }
+
+}

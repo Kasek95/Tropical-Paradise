@@ -11,10 +11,12 @@ import Apartment from "./Component/IslandsPage/apartment/Apartment";
 import Login from "./Component/login/Login";
 import Register from "./Component/register/Register";
 
+
 function App() {
     const [rooms, setRooms] = useState();
     const [opinions, setOpinions] = useState()
     const [reservation,setReservation] = useState()
+    const [payments, setPayments] = useState()
 
     useEffect(() => {
         getRooms();
@@ -25,6 +27,9 @@ function App() {
     },[])
     useEffect(() =>{
         getReservation()
+    },[])
+    useEffect(() => {
+        getPayments()
     },[])
 
     async function getRooms() {
@@ -41,6 +46,11 @@ function App() {
         setReservation(data)
     }
 
+    async function getPayments() {
+        const {data} = await  supabase.from("payments").select()
+         setPayments(data)
+    }
+
     return (
       <>
           <Header apartments={rooms}/>
@@ -52,7 +62,7 @@ function App() {
               <Route path="/adminPanel" element={<AdminPanel getApartments={getRooms}  apartments={rooms} opinions={opinions} reservation={reservation} getOpinion={getOpinion}/>}></Route>
               <Route path={"/Login"} element={<Login/>}></Route>
               <Route path={"/register"} element={<Register/>}></Route>
-              <Route path="/Strefa-klienta" element={<User getRooms={getRooms} reservation={reservation} apartments={rooms}/>}></Route>
+              <Route path="/Strefa-klienta" element={<User getPayments={getPayments} payments={payments} getRooms={getRooms} reservation={reservation} apartments={rooms} getReservation={getReservation}/>}></Route>
           </Routes>
           <Footer/>
 
