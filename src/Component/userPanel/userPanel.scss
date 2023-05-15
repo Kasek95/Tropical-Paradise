@@ -202,7 +202,7 @@
                 border: none;
                 border-radius: 10px;
                 outline: none;
-
+                cursor: pointer;
                 a {
                   color: white;
                   text-decoration: none;
@@ -213,25 +213,6 @@
           }
           .sliderOfert:hover .slide-carousel {
             animation-play-state: paused;
-          }
-          .sliderOfert::before, ::after {
-            position: absolute;
-            top: 0;
-            width: 250px;
-            height: 100%;
-            content: "";
-            z-index: 2;
-             @media (max-width: 425px) {
-               width: 40px;
-             }
-          }
-          .sliderOfert::before {
-            left: -10px;
-            background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-          }
-          .sliderOfert::after {
-            right: -10px;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
           }
         }
       }

@@ -9,10 +9,11 @@ import supabase from "../../supabase";
 import SingielApartment from "./sinigielApartmen/SingielApartment";
 import Opinion from "./opinion/Opinion";
 import AddApartmentForm from "./formAddApartment/AddApartmentForm";
+import Reservation from "./reservation/Reservation";
 import ReactPaginate from "react-paginate";
 
 
-const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,apartmentLength,getApartments}) => {
+const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,apartmentLength,getApartments, getReservation}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const user = useSelector((state) => state.user.value.user)
@@ -20,12 +21,16 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     const [displayApartmentPanel, setDisplayApartmentPanel] = useState(true)
     const [displayOpinionPanel, setDisplayOpinionPanel] = useState(false)
     const [addApartment, setAddApartment] = useState(false)
+    const [isDisplayReservation, setIsDisplayReservation] = useState(false)
     const [pageNumber, setPageNumber] = useState(0);
     const [apartmentPage, setApartmentPage] = useState(0)
+    const [reservationPage,setReservationPage] = useState(0)
+    const reservationPerPage = 3;
     const opinionsPerPage = 8;
-    const pageVisited = pageNumber * opinionsPerPage;
     const apartmentsPerPage = 8;
-    const  apartmentVisited = apartmentPage * apartmentsPerPage;
+    const pageVisited = pageNumber * opinionsPerPage;
+    const apartmentVisited = apartmentPage * apartmentsPerPage;
+    const reservationVisited = reservationPage * reservationPerPage
 
     const logOut = async () => {
         await supabase.auth.signOut();
@@ -39,6 +44,9 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     const changeApartmentPage = ({selected}) => {
         setApartmentPage(selected)
     }
+    const changeReservationPage = ({selected}) => {
+        setReservationPage(selected)
+    }
     const setAddApartmentDisplay = () => {
         setAddApartment(false)
         setDisplayApartmentPanel(true)
@@ -50,15 +58,25 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
         setDisplayApartmentPanel(false);
         setShowAdminMenu(false)
         setAddApartment(false)
+        setIsDisplayReservation(false)
     }
     const setApartmentPanel = () => {
         setDisplayApartmentPanel(true)
         setDisplayOpinionPanel(false)
         setShowAdminMenu(false)
         setAddApartment(false)
+        setIsDisplayReservation(false)
     }
     const setAddApartmentShow = () => {
         setAddApartment(true)
+        setDisplayApartmentPanel(false)
+        setDisplayOpinionPanel(false)
+        setShowAdminMenu(false)
+        setIsDisplayReservation(false)
+    }
+    const setReservationDisplay = () => {
+        setIsDisplayReservation(true)
+        setAddApartment(false)
         setDisplayApartmentPanel(false)
         setDisplayOpinionPanel(false)
         setShowAdminMenu(false)
@@ -70,6 +88,7 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     }
     const pageCount = Math.ceil(opinions === undefined ? 1 : opinions.length/ opinionsPerPage);
     const apartmentCount = Math.ceil(apartments === undefined ?  1 : apartments.length / apartmentsPerPage);
+    const reservationCount = Math.ceil(reservation === undefined ? 1 : reservation.length / reservationPerPage)
     const displayOpinions = opinions === undefined ? null : opinions.slice(pageVisited, pageVisited + opinionsPerPage)
         .map((opinion) => (
             <Opinion key={opinion.id} getOpinion={getOpinion} opinion={opinion}/>
@@ -77,6 +96,10 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     const displayApartments = apartments === undefined ? null : apartments.slice(apartmentVisited, apartmentVisited + apartmentsPerPage)
         .map(apartment => (
             <SingielApartment getApartments={getApartments} key={apartment.id} apartment={apartment} />
+        ))
+    const displayReservation = reservation === undefined ? null : reservation.slice(reservationVisited, reservationVisited + reservationPerPage)
+        .map(el=> (
+            <Reservation key={el.id} getReservation={getReservation} el={el}/>
         ))
 
 
@@ -92,7 +115,7 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
                                <span onClick={setApartmentPanel}>Apartamenty</span>
                                <span onClick={setAddApartmentShow}>Dodaj Apartament</span>
                                <span onClick={setOpinionPanel}>Opinie</span>
-                               <span>Rezerwacje</span>
+                               <span onClick={setReservationDisplay}>Rezerwacje</span>
                            </nav>
                             <button  onClick={logOut} className={"logout"}>Logout</button>
                          </section>
@@ -135,6 +158,25 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
                         <article className={"addApartmentContainer"}>
                             <AddApartmentForm cancelForm={setAddApartmentDisplay} getApartments={getApartments}/>
                         </article>
+                    </section>
+
+                    <section className={isDisplayReservation ? "reservationMenu " : "reservationMenu hide"}>
+                        <h3>Rezerwacje</h3>
+                         <article className={"singielReservation"}>
+                             {displayReservation}
+                             <ReactPaginate
+                                 previousLabel={"Previous"}
+                                 nextLabel={"Next"}
+                                 pageCount={reservationCount}
+                                 onPageChange={changeReservationPage}
+                                 containerClassName={"paginationBttns"}
+                                 previousLinkClassName={"previousBttn"}
+                                 nextLinkClassName={"nextBttn"}
+                                 disabledClassName={"paginationDisabled"}
+                                 activeClassName={"paginationActive"}
+                             />
+
+                         </article>
                     </section>
                 </section>
 
