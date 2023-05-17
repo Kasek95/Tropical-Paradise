@@ -5,6 +5,8 @@ import WelcomeSection from "./WelcomSection/WelcomeSection";
 import DreamsVacation from "./dreamVacation/DreamsVacation";
 import HeroImg from "./heroImg/HeroImg";
 import RateIsland from "./rateIsland/RateIsland";
+import Contact from "./contact/Contact";
+import Opinions from "./opinions/Opinions";
 
 const Home = () => {
 
@@ -15,6 +17,8 @@ const Home = () => {
                 <DreamsVacation/>
                 <HeroImg/>
                 <RateIsland/>
+                <Opinions/>
+                <Contact/>
             </main>
         </>
     )

@@ -1,0 +1,65 @@
+.contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 500px;
+  background-color: #eee;
+  padding: 10px;
+  .contact-container {
+    margin:100px 0;
+    h2 {
+      color:#1755e7;
+      font-size: clamp(1rem, 0rem + 8vw, 3rem);
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .contactForm {
+      display: flex;
+      flex-direction: column;
+      label {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      input {
+        margin-bottom: 20px;
+        height: 30px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      textarea {
+        padding: 10px;
+        resize: unset;
+        height: 200px;
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+      }
+      .sendEmail {
+        align-self: flex-end;
+        padding: 1em;
+        width: 100%;
+        max-width: 300px;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        background-color: #1755e7;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 50%;
+  height: 50px;
+  background-color: #eee;
+  transform: skewX(45deg);
+}

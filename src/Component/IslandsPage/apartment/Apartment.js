@@ -17,7 +17,7 @@ import moment from "moment";
 
 const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getReservation}) => {
     const {apartmentId} = useParams()
-    const {RangePicker, defaultValue} = DatePicker
+    const {RangePicker} = DatePicker
     const user = useSelector((state) => state.user.value.user)
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
@@ -30,7 +30,7 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
     const setToLike = async (id) => {
         const findApartments = apartments.find(el => el.id === id)
 
-        const {data, error}= await supabase
+       await supabase
             .from("Roms")
             .update({
                 RomLiked: !findApartments.RomLiked
