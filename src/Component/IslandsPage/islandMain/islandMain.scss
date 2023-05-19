@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  margin-top: 80px;
    .islandContainer {
      position: relative;
      height: 1000px;
@@ -52,6 +53,7 @@
          margin-left: 10px;
          margin-bottom: 30px;
          padding-left: 10px;
+         cursor: pointer;
          @media (max-width: 768px) {
            margin-bottom: unset;
            margin-left: unset;

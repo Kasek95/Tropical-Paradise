@@ -58,9 +58,9 @@
   content: "";
   position: absolute;
   top: -50px;
-  left: -30px;
+  right: -30px;
   width: 50%;
   height: 50px;
   background-color: #eee;
-  transform: skewX(45deg);
+  transform: skewX(-45deg);
 }

@@ -1,6 +1,7 @@
 @import "../../sass/colors";
 
 .opinionsHomePage {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +59,16 @@
        }
      }
   }
+}
+.opinionsHomePage::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: -30px;
+  width: 50%;
+  height: 50px;
+  background-color: white;
+  transform: skewX(45deg);
 }
 .opinionsSlide {
     position: relative;

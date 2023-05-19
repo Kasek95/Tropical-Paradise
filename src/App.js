@@ -6,7 +6,7 @@ import IslandPage from "./Component/IslandsPage/IslandPage";
 import Header from "./Component/header/Header";
 import AdminPanel from "./Component/adminPanel/AdminPanel";
 import User from "./Component/userPanel/User";
-import Footer from "./Component/Footer/Footer";
+import Footer from "./Component/footer/Footer";
 import Apartment from "./Component/IslandsPage/apartment/Apartment";
 import Login from "./Component/login/Login";
 import Register from "./Component/register/Register";

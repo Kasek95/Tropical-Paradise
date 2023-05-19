@@ -1,0 +1,109 @@
+@import "../../sass/colors";
+@import "../../sass/mixin";
+.offers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  @include heroImages("../../../assets/offer-mini.jpg");
+  overflow: hidden;
+  .section-heading {
+    font-size: clamp(1rem, 0rem + 8vw, 3rem);
+    letter-spacing: 2px;
+    color: white;
+    margin-top: 100px;
+
+  }
+  .ofert-container {
+    margin: 100px 0;
+    padding: 10px;
+  }
+  &__option {
+    display: flex;
+    margin: 20px 0;
+    box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+    background-color: $pure-white;
+    overflow: hidden;
+     @media (max-width: 990px) {
+       display: flex;
+       flex-direction: column;
+     }
+    &-img {
+      width: 100%;
+      max-width: 450px;
+      max-height: 300px;
+      transition: transform .3s;
+       @media (max-width: 990px) {
+         max-width: unset;
+       }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-info {
+      padding: 2em;
+      background-color: $pure-white;
+      z-index: 10;
+    }
+
+    &-heading {
+      margin-bottom: 0.5em;
+      font-size: 2.4rem;
+      font-weight: 300;
+    }
+
+    &-text {
+      margin-bottom: 0.5em;
+      font-size: 1.3rem;
+      color: $dark;
+    }
+
+    &-btn {
+      margin-top: 1em;
+      padding: 0.8em;
+      width: 100%;
+      color: $pure-white;
+      background-color: $main-color;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+       a {
+         text-decoration: none;
+         color: white;
+       }
+      &::before {
+        background-color: $secondary-color;
+      }
+    }
+  }
+  &__option:nth-of-type(2) {
+    display: flex;
+    flex-direction: row-reverse;
+    @media (max-width: 990px) {
+      display: unset;
+      flex-direction: unset;
+    }
+  }
+}
+.offers::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -30px;
+  width: 50%;
+  height: 50px;
+  background-color: white;
+  transform: skewX(45deg);
+}
+.offers::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: -30px;
+  width: 50%;
+  height: 50px;
+  background-color: white;
+  transform: skewX(45deg);
+}

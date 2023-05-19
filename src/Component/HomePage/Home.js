@@ -7,6 +7,7 @@ import HeroImg from "./heroImg/HeroImg";
 import RateIsland from "./rateIsland/RateIsland";
 import Contact from "./contact/Contact";
 import Opinions from "./opinions/Opinions";
+import Ofert from "./ofert/Ofert";
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
                 <DreamsVacation/>
                 <HeroImg/>
                 <RateIsland/>
+                <Ofert/>
                 <Opinions/>
                 <Contact/>
             </main>
