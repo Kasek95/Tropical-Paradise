@@ -8,13 +8,13 @@ const Contact = () => {
                 <h2>KONTAKT</h2>
                 <form className={"contactForm"}>
                     <label htmlFor={"name"}>Imię i Nazwisko:</label>
-                    <input type={"text"} name={"name"}/>
+                    <input type={"text"} name={"name"} id={"name"}/>
 
                     <label htmlFor={"email"}>Adres E-mail:</label>
-                    <input type={"email"} />
+                    <input id={"email"} type={"email"} />
 
                     <label htmlFor={"message"}>Wiadomość:</label>
-                    <textarea name={"message"}/>
+                    <textarea id={"message"} name={"message"}/>
                     <button className={"sendEmail"}>Wyślij</button>
                 </form>
             </article>

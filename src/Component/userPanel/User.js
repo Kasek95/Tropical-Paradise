@@ -103,7 +103,7 @@ const  User = ({apartments,reservation,getRooms,getReservation,payments,getPayme
                        <h3>Twoja Lista</h3>
                         {!apartments ? null : apartments.filter(el => el.RomLiked === true)
                             .map(el => (
-                                <LikedApartment apartment={el} apartments={apartments} getRooms={getRooms}/>
+                                <LikedApartment key={el.id} apartment={el} apartments={apartments} getRooms={getRooms}/>
                             ))
                         }
                     </section>
@@ -112,7 +112,7 @@ const  User = ({apartments,reservation,getRooms,getReservation,payments,getPayme
                         <h3>Twoje Rezerwacje</h3>
                         {user === null ? null : reservation.filter(el => el.userId === user.id)
                             .map(el => (
-                                <UserReservation getReservation={getReservation} apartaments={apartments} reservation={el}/>
+                                <UserReservation key={el.id} getReservation={getReservation} apartaments={apartments} reservation={el}/>
                             ))}
                     </section>
                     <section className={isDisplayPayment ? "payment container show" : "payment container"}>

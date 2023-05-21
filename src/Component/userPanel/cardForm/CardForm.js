@@ -59,6 +59,7 @@ const CardForm = ({user,getPayments,closeForm}) => {
                          onFocus={e => setFocus(e.target.name)}
                          value={name}
                          placeholder="Imię i nazwisko"
+                         id={"user"}
                      />
                  </div>
                  <div className={"input"}>
@@ -70,6 +71,7 @@ const CardForm = ({user,getPayments,closeForm}) => {
                              placeholder="xxxx-xxxx-xxxx-xxxx"
                             options={{creditCard: true}}
                              type={"text"}
+                             id={"cardNumber"}
                          />
 
                  </div>
@@ -87,11 +89,12 @@ const CardForm = ({user,getPayments,closeForm}) => {
                              }}
                              value={epixry}
                              placeholder="Miesiąc/Rok"
+                             id={"month"}
                          />
                      </div>
 
                      <div className={"input-date"}>
-                         <label htmlFor={"CCV"}>Kod CCV</label>
+                         <label htmlFor={"CCV"}>Kod CVC</label>
                          <Cleave
                              onChange={e => setCcv(e.target.value)}
                              onFocus={e => setFocus(e.target.name)}
@@ -101,7 +104,8 @@ const CardForm = ({user,getPayments,closeForm}) => {
                              name={"cvc"}
                              type={"text"}
                              value={ccv}
-                             placeholder="Kod CCV"
+                             placeholder="Kod CVC"
+                             id={"CCV"}
                          />
                      </div>
                  </div>
