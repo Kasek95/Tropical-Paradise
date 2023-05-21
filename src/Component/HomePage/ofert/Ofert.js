@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 const Ofert = () => {
 
     return (
-        <section className="offers section-padding section" id="offers">
+        <section id={"about"} className="offers section-padding section" >
             <h2 className="section-heading">Oferty</h2>
             <div className="container ofert-container">
 

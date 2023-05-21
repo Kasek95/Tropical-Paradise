@@ -52,17 +52,6 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
             .eq("id", id)
         getRooms()
     }
-    // const onDateRangeChange = dateRange => {
-    //     if (dateRange) {
-    //         changeDateRange(returnMomentDateRange(dateRange[0], dateRange[1]));
-    //     } else {
-    //         changeDateRange([]);
-    //     }
-    // };
-    //
-    // const returnMomentDateRange = (start, finish) => {
-    //     return [moment(start, "YYYY-MM-DD"), moment(finish, "YYYY-MM-DD")];
-    // };
 
     if(!apartments || !opinions || !reservation) return null
     const singielApartment = apartments.find(el => el.id == apartmentId)
@@ -84,8 +73,6 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
         getRooms()
         getOpinion()
         notify()
-
-
     }
 
     const handleDateChange = (date,dateString) => {

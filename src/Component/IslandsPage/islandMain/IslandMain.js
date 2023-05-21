@@ -4,6 +4,8 @@ import AllOffers from "../allOffers/AllOffers";
 import IslandTikiTaki from "../IslandTikiTaki/IslandTikiTaki";
 import {useSearchParams} from "react-router-dom"
 import supabase from "../../../supabase";
+import IslandNobu from "../islandNobu/IslandNobu";
+import IslandTocaToca from "../islandTocaToca/IslandTocaToca";
 
 const IslandMain = ({apartments,getRooms}) => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -97,6 +99,15 @@ const IslandMain = ({apartments,getRooms}) => {
                            <article className={TikiTaki ? "IslandTikiTaki show" : "IslandTikiTaki"}>
                                <IslandTikiTaki getRooms={getRooms} apartments={apartments} setToLike={setToLike}/>
                            </article>
+
+                           <article className={nobu ? "IslandNobu show" : "IslandNobu"}>
+                               <IslandNobu getRooms={getRooms} apartments={apartments} setToLike={setToLike}/>
+                           </article>
+
+                           <article className={TocaToca ? "IslandTocaToca show" : "IslandTocaToca"}>
+                               <IslandTocaToca getRooms={getRooms} apartments={apartments} setToLike={setToLike}/>
+                           </article>
+
                        </section>
 
 

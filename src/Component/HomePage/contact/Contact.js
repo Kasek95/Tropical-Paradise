@@ -3,7 +3,7 @@ import "./contact.scss"
 const Contact = () => {
 
     return (
-        <section className={"contact"}>
+        <section id={"contact"} className={"contact"}>
             <article className={"container contact-container"}>
                 <h2>KONTAKT</h2>
                 <form className={"contactForm"}>
