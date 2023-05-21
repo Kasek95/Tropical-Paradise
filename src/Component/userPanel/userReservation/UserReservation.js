@@ -23,7 +23,7 @@ const UserReservation = ({reservation,apartaments,getReservation}) => {
                 <span>Zameldowanie: {reservation.StartDate.split("T")[0]}</span>
                 <span>Wymeldowanie: {reservation.EndDate.split("T")[0]}</span>
                 <span>Apartament nr: {reservation.apartmentId}</span>
-                <span>Cena:{findApartament.RomPrice} zł</span>
+                <span>Cena za noc:{findApartament.RomPrice} zł</span>
                 <span>Wyspa: {findApartament.Island}</span>
                 <button onClick={()=> deleteReservation(reservation.id)}>Anuluj Rezerwację</button>
             </div>

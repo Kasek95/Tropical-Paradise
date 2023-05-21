@@ -107,20 +107,20 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     return (
         <>
             <section className={"adminPanel"}>
-                <div className={"adminNav"}>
-                    <h2>Admin Panel</h2>
-                    <section className={"navWrapper"}>
-                        {showAdminMenu ? <VscChromeClose className={"hamburger"} onClick={()=> setShowAdminMenu(false)}/>  : <FaBars className={"hamburger"} onClick={()=> setShowAdminMenu(true)}/>}
-                        <nav className={showAdminMenu ? "navigationAdmin show" : "navigationAdmin"}>
-                            <span onClick={setApartmentPanel}>Apartamenty</span>
-                            <span onClick={setAddApartmentShow}>Dodaj Apartament</span>
-                            <span onClick={setOpinionPanel}>Opinie</span>
-                            <span onClick={setReservationDisplay}>Rezerwacje</span>
-                        </nav>
-                        <button  onClick={logOut} className={"logout"}>Logout</button>
-                    </section>
-                </div>
                 <section className={"panel container"}>
+                    <div className={"adminNav"}>
+                        <h2>Admin Panel</h2>
+                        <section className={"navWrapper"}>
+                            {showAdminMenu ? <VscChromeClose className={"hamburger"} onClick={()=> setShowAdminMenu(false)}/>  : <FaBars className={"hamburger"} onClick={()=> setShowAdminMenu(true)}/>}
+                            <nav className={showAdminMenu ? "navigationAdmin show" : "navigationAdmin"}>
+                                <span onClick={setApartmentPanel}>Apartamenty</span>
+                                <span onClick={setAddApartmentShow}>Dodaj Apartament</span>
+                                <span onClick={setOpinionPanel}>Opinie</span>
+                                <span onClick={setReservationDisplay}>Rezerwacje</span>
+                            </nav>
+                            <button  onClick={logOut} className={"logout"}>Logout</button>
+                        </section>
+                    </div>
                     <section className={displayApartmentPanel ? "apartmentSection" : "apartmentSection hide"}>
                         <h3>Apartment</h3>
                         <article className={"apartments"}>
