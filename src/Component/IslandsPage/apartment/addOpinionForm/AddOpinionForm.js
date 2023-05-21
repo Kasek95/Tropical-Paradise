@@ -6,6 +6,7 @@ import CustomSelect from "../../../adminPanel/formAddApartment/CustomSelect";
 import CustomInput from "../../../register/customInput/CustomInput";
 import CustomTextArea from "../../../adminPanel/formAddApartment/CustomTextArea";
 import supabase from "../../../../supabase";
+import {toast} from "react-toastify";
 
 const AddOpinionForm = ({setIsDisplayForm,apartmentId,getOpinion}) => {
     const closeForm = () => {
@@ -24,6 +25,16 @@ const AddOpinionForm = ({setIsDisplayForm,apartmentId,getOpinion}) => {
         getOpinion()
         actions.resetForm()
         closeForm()
+        toast.success('Gratulacje dodałeś opinię!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     return (
@@ -73,7 +84,7 @@ const AddOpinionForm = ({setIsDisplayForm,apartmentId,getOpinion}) => {
                         placeholder={"Napisz opis apartamentu"}
                     />
                 </div>
-                <button className={"addOpinionBtn"}  type={"submit"}>Add Apartment</button>
+                <button className={"addOpinionBtn"}  type={"submit"}>Add Opinion</button>
             </Form>
         )}
     </Formik>
