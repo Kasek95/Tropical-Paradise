@@ -14,7 +14,24 @@ import {VscChromeClose} from "react-icons/vsc";
 const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit,displayPayment}) => {
       const dispatch = useDispatch()
       const navigate = useNavigate()
-      const [showUserMenu, setShowUserMenu] = useState()
+      const [showUserMenu, setShowUserMenu] = useState(true)
+      const showPulpit = () => {
+          setShowUserMenu(false)
+          displayPulpit()
+      }
+      const displayLikedRoms = () => {
+          setShowUserMenu(false)
+          showLikedRoms()
+      }
+      const displayReservation = () => {
+          setShowUserMenu(false)
+          setReservation()
+      }
+      const showPayment = () => {
+          setShowUserMenu(false)
+          displayPayment()
+      }
+
 
     const logOut = async () => {
         await supabase.auth.signOut();
@@ -28,11 +45,11 @@ const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit,d
             <div className={"menu__user"}>
                 {showUserMenu ? <VscChromeClose className={"hamburger"} onClick={()=> setShowUserMenu(false)}/>  : <FaBars className={"hamburger"} onClick={()=> setShowUserMenu(true)}/>}
                 <div className={showUserMenu ? "userNav show" : "userNav"}>
-                    <div onClick={displayPulpit} className={"box"}>
+                    <div onClick={showPulpit} className={"box"}>
                         <HiOutlineSquares2X2 className={"icon"}/>
                         <span>Pulpit</span>
                     </div>
-                    <div onClick={showLikedRoms} className={"box"}>
+                    <div onClick={displayLikedRoms}  className={"box"}>
                         <AiFillHeart  className={"icon"}/>
                         <span>ulubione   {apartments.filter(el => el.RomLiked === true).length === 0 ? null :  <span className={"liked"}>{apartments.filter(el=> el.RomLiked === true).length}</span>}</span>
                     </div>
@@ -43,7 +60,7 @@ const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit,d
                             disabled={user !== null && user.email !== "admin@gmail.com" ? "" : "disabled"}
                             type={"button"}
                             className={user !== null && user.email !== "admin@gmail.com" ? "btn" : "btn grey"}
-                            onClick={setReservation}
+                            onClick={displayReservation}
                         >
                             Twoje Rezerwacje
                         </button>
@@ -55,7 +72,7 @@ const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit,d
                             disabled={user !== null && user.email !== "admin@gmail.com" ? "" : "disabled"}
                             type={"button"}
                             className={user !== null && user.email !== "admin@gmail.com" ? "btn" : "btn grey"}
-                            onClick={displayPayment}
+                            onClick={showPayment}
                         >
                             Płatności
                         </button>
