@@ -2,135 +2,158 @@
 
 .adminPanel {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
   font-family: $openSans;
   width: 100%;
-  height: 100vh;
-  margin: 50px 0 100px 0;
-  padding: 5px;
-
-  .panel {
-    min-height: 1100px;
-    border: 2px solid #2e2e2e;
-    background-image: url("../../assets/backgroundAdmin2.jpg");
-    background-size: cover;
-    background-position: center;
-    color: $colorWhite;
-     @media (max-width: 768px) {
-       min-height: 1200px;
-     }
-     @media (max-width: 320px) {
-       min-height: 1300px;
-     }
-
-    .adminNav {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  height: 110vh;
+  margin: 80px 0 0 0;
+  background-color: #BDDDF1;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  .adminNav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 110vh;
+    width: 300px;
+    padding: 0 20px;
+    background: #10437c;
+    color: white;
+    @media (max-width: 768px) {
+      flex-direction: unset;
+      width: 100%;
       height: 100px;
-      padding: 0 20px;
-      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-      color: white;
+      justify-content: space-between;
+      margin-top: 100px;
+    }
+     h2 {
+       margin: 20px 0;
+     }
+    .navWrapper {
 
-      .navWrapper {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        .hamburger {
-          display: none;
-          padding: 2px;
-          border: 1px solid $colorWhite;
-          border-radius: 5px;
-          font-size: 1.2rem;
-          color: $colorWhite;
-          @media (max-width: 768px) {
-            display: flex;
-          }
-        }
-
-        .navigationAdmin {
-          display: flex;
-          cursor: pointer;
-          gap: 10px;
-          @media (max-width: 768px) {
-            position: absolute;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-            top: 100px;
-            left: 0;
-            width: 100%;
-            z-index: 10;
-          }
-
-          span {
-            @media (max-width: 768px) {
-              padding: 10px;
-            }
-          }
-        }
-
-        .logout {
-          background: none;
-          border: 1px solid $colorWhite;
-          border-radius: 30px;
-          color: $colorWhite;
-          text-transform: uppercase;
-          padding: 5px;
-        }
-
-        .show {
+      align-items: center;
+      gap: 10px;
+       @media (max-width: 768px) {
+         display: flex;
+       }
+      .hamburger {
+        display: none;
+        padding: 2px;
+        border: 1px solid $colorWhite;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        color: $colorWhite;
+        @media (max-width: 768px) {
           display: flex;
         }
       }
-    }
 
+      .navigationAdmin {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 10px;
+        @media (max-width: 768px) {
+          position: absolute;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          background: #10437c;
+          top: 90px;
+          left: 0;
+          width: 100%;
+          z-index: 10;
+        }
+
+        span {
+          margin-bottom: 10px;
+          @media (max-width: 768px) {
+            padding: 10px;
+          }
+        }
+      }
+
+      .logout {
+        background: none;
+        border: 1px solid $colorWhite;
+        border-radius: 30px;
+        color: $colorWhite;
+        text-transform: uppercase;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      .show {
+        display: flex;
+      }
+    }
+  }
+
+  .panel {
+    position: relative;
+    height: 1000px;
+    border: 2px solid #2e2e2e;
+    background-image: url("../../assets/backgroundAdmin.jpg");
+    background-size: cover;
+    background-position: center;
+    color: $colorWhite;
+    margin: auto auto;
     .apartmentSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
       padding: 20px;
       width: 100%;
       height: 100%;
-
+      @media (max-width: 768px) {
+        justify-content: unset;
+      }
       h3 {
         margin-bottom: 20px;
       }
 
       .apartments {
-        position: relative;
+
         width: 100%;
         min-height: 800px;
       }
     }
 
     .opinions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 20px;
       width: 100%;
       height: 100%;
-
+      @media (max-width: 768px) {
+        justify-content: unset;
+      }
       h3 {
         margin-bottom: 20px;
       }
 
       .opinion {
-        position: relative;
         width: 100%;
         min-height: 800px;
       }
     }
     .reservationMenu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 20px;
       width: 100%;
       height: 100%;
+      @media (max-width: 768px) {
+        justify-content: unset;
+      }
       h3 {
         margin-bottom: 20px;
       }
       .singielReservation {
-        position: relative;
         width: 100%;
         min-height: 800px;
       }
@@ -142,18 +165,26 @@
       padding: 20px;
       width: 100%;
       height: 100%;
+      @media (max-width: 768px) {
+        align-items: unset;
+        margin-top: 200px;
+      }
     }
     .paginationBttns {
+      position: absolute;
+      bottom: 60px;
+      right: 0;
       display: flex;
       justify-content: center;
       margin-top: 50px;
       width: 100%;
       height: 40px;
       list-style: none;
-      position: absolute;
-      bottom: -100px;
       @media (min-width: 320px) and (max-width: 375px) {
-        bottom: -70px;
+        margin-top: 40px;
+      }
+      @media (min-width: 375px) and (max-width: 425px) {
+       margin-top: 30px;
       }
 
       a {

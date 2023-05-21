@@ -1,6 +1,7 @@
 import React from "react";
 import "./userReservation.scss"
 import supabase from "../../../supabase";
+import DayJS from 'react-dayjs';
 
 const UserReservation = ({reservation,apartaments,getReservation}) => {
 
@@ -16,7 +17,7 @@ const UserReservation = ({reservation,apartaments,getReservation}) => {
     if(!reservation || !apartaments) return null
     const arrive = reservation.StartDate.split("T")[0].split("-").join("")
     const back = reservation.EndDate.split("T")[0].split("-").join("")
-    const day =  parseInt(back) - parseInt(arrive)
+    const day =  parseInt(back) - parseInt(arrive) === 0 ? 1 : parseInt(back) - parseInt(arrive)
     const findApartament = apartaments.find(el => el.id === reservation.apartmentId)
 
     return (

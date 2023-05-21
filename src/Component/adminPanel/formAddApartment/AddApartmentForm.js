@@ -6,11 +6,14 @@ import CustomSelect from "./CustomSelect";
 import {addApartmentValidation} from "./validationAddApartment";
 import supabase from "../../../supabase";
 import CustomTextArea from "./CustomTextArea";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddApartmentForm = ({getApartments, cancelForm}) => {
     const cancelFormAdd = () => {
         cancelForm()
     }
+
 
     async function getBase64ImageFromUrl(imageUrl) {
         const res = await fetch(imageUrl);
@@ -55,6 +58,17 @@ const AddApartmentForm = ({getApartments, cancelForm}) => {
         getApartments()
         actions.resetForm();
         cancelFormAdd()
+        toast.success('Gratulacje dodałeś apartament!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        })
+
     }
 
     return (
@@ -139,7 +153,6 @@ const AddApartmentForm = ({getApartments, cancelForm}) => {
                           />
                     </div>
                     <button className={"addApartmentBtn"}  type={"submit"}>Add Apartment</button>
-
 
                 </Form>
             )}

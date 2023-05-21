@@ -3,6 +3,8 @@ import "./singielApartments.scss"
 import {AiFillDelete} from "react-icons/ai"
 import {AiFillEdit} from "react-icons/ai"
 import supabase from "../../../supabase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingielApartment = ({apartment,getApartments}) => {
     const [isDisplayForm, setIsDisplayForm] = useState(false)
@@ -61,6 +63,16 @@ const SingielApartment = ({apartment,getApartments}) => {
             .delete()
             .eq("id", id)
         getApartments()
+        toast.success('Usunąłeś apartament!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
    const submit = async (e) => {
        e.preventDefault()
@@ -155,6 +167,7 @@ const SingielApartment = ({apartment,getApartments}) => {
                    <button type={"submit"} className={"saveBtn"}>Save</button>
                </form>
             </section>
+
         </div>
     )
 

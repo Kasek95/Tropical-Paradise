@@ -120,6 +120,10 @@
               border: none;
               background-color: $green-color;
               cursor: pointer;
+               a {
+                 color: white;
+                 text-decoration: none;
+               }
 
               &::before {
                 background-color: $green-color-hover;

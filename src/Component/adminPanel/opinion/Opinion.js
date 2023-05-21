@@ -2,8 +2,12 @@ import React from "react"
 import "./opinion.scss"
 import {AiFillDelete} from "react-icons/ai";
 import supabase from "../../../supabase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Opinion = ({opinion, getOpinion}) => {
+
+
 
 
      const deleteOpinion = async (id) => {
@@ -11,6 +15,16 @@ const Opinion = ({opinion, getOpinion}) => {
              .delete()
              .eq("id", id)
          getOpinion()
+         toast.success('Usunąłeś opinię!', {
+             position: "top-right",
+             autoClose: 5000,
+             hideProgressBar: false,
+             closeOnClick: true,
+             pauseOnHover: true,
+             draggable: true,
+             progress: undefined,
+             theme: "light",
+         });
      }
 
     return (

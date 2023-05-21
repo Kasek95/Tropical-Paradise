@@ -11,6 +11,7 @@ import Opinion from "./opinion/Opinion";
 import AddApartmentForm from "./formAddApartment/AddApartmentForm";
 import Reservation from "./reservation/Reservation";
 import ReactPaginate from "react-paginate";
+import {ToastContainer} from "react-toastify";
 
 
 const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,apartmentLength,getApartments, getReservation}) => {
@@ -26,8 +27,8 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     const [apartmentPage, setApartmentPage] = useState(0)
     const [reservationPage,setReservationPage] = useState(0)
     const reservationPerPage = 3;
-    const opinionsPerPage = 8;
-    const apartmentsPerPage = 8;
+    const opinionsPerPage = 6;
+    const apartmentsPerPage = 7;
     const pageVisited = pageNumber * opinionsPerPage;
     const apartmentVisited = apartmentPage * apartmentsPerPage;
     const reservationVisited = reservationPage * reservationPerPage
@@ -106,27 +107,30 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
     return (
         <>
             <section className={"adminPanel"}>
+                <div className={"adminNav"}>
+                    <h2>Admin Panel</h2>
+                    <section className={"navWrapper"}>
+                        {showAdminMenu ? <VscChromeClose className={"hamburger"} onClick={()=> setShowAdminMenu(false)}/>  : <FaBars className={"hamburger"} onClick={()=> setShowAdminMenu(true)}/>}
+                        <nav className={showAdminMenu ? "navigationAdmin show" : "navigationAdmin"}>
+                            <span onClick={setApartmentPanel}>Apartamenty</span>
+                            <span onClick={setAddApartmentShow}>Dodaj Apartament</span>
+                            <span onClick={setOpinionPanel}>Opinie</span>
+                            <span onClick={setReservationDisplay}>Rezerwacje</span>
+                        </nav>
+                        <button  onClick={logOut} className={"logout"}>Logout</button>
+                    </section>
+                </div>
                 <section className={"panel container"}>
-                     <div className={"adminNav"}>
-                         <h2>Admin Panel</h2>
-                         <section className={"navWrapper"}>
-                           {showAdminMenu ? <VscChromeClose className={"hamburger"} onClick={()=> setShowAdminMenu(false)}/>  : <FaBars className={"hamburger"} onClick={()=> setShowAdminMenu(true)}/>}
-                           <nav className={showAdminMenu ? "navigationAdmin show" : "navigationAdmin"}>
-                               <span onClick={setApartmentPanel}>Apartamenty</span>
-                               <span onClick={setAddApartmentShow}>Dodaj Apartament</span>
-                               <span onClick={setOpinionPanel}>Opinie</span>
-                               <span onClick={setReservationDisplay}>Rezerwacje</span>
-                           </nav>
-                            <button  onClick={logOut} className={"logout"}>Logout</button>
-                         </section>
-                     </div>
                     <section className={displayApartmentPanel ? "apartmentSection" : "apartmentSection hide"}>
                         <h3>Apartment</h3>
                         <article className={"apartments"}>
                             {displayApartments}
                             <ReactPaginate
-                                previousLabel={"Previous"}
-                                nextLabel={"Next"}
+                                pageRangeDisplayed={1}
+                                marginPagesDisplayed={1}
+                                breakLabel="..."
+                                previousLabel={"<<"}
+                                nextLabel={">>"}
                                 pageCount={apartmentCount}
                                 onPageChange={changeApartmentPage}
                                 containerClassName={"paginationBttns"}
@@ -142,8 +146,11 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
                         <article className={"opinion"}>
                             {displayOpinions}
                             <ReactPaginate
-                                previousLabel={"Previous"}
-                                nextLabel={"Next"}
+                                pageRangeDisplayed={1}
+                                marginPagesDisplayed={1}
+                                breakLabel="..."
+                                previousLabel={"<<"}
+                                nextLabel={">>"}
                                 pageCount={pageCount}
                                 onPageChange={changePage}
                                 containerClassName={"paginationBttns"}
@@ -165,8 +172,11 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
                          <article className={"singielReservation"}>
                              {displayReservation}
                              <ReactPaginate
-                                 previousLabel={"Previous"}
-                                 nextLabel={"Next"}
+                                 pageRangeDisplayed={1}
+                                 marginPagesDisplayed={1}
+                                 breakLabel="..."
+                                 previousLabel={"<<"}
+                                 nextLabel={">>"}
                                  pageCount={reservationCount}
                                  onPageChange={changeReservationPage}
                                  containerClassName={"paginationBttns"}
@@ -179,7 +189,7 @@ const AdminPanel = ({apartments,reservation,opinions,getOpinion,opinionsLength,a
                          </article>
                     </section>
                 </section>
-
+             <ToastContainer/>
             </section>
         </>
     )

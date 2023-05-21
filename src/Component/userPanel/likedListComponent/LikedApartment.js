@@ -25,6 +25,7 @@ const LikedApartment = ({apartment,getRooms,apartments}) => {
                <span>Wyspa: {apartment.Island}</span>
                <img src={apartment.RomImg} alt={apartment.RomInfo}/>
            </div>
+            <p>{apartment.RomInfo}</p>
             <div className={"price"}>
                 <div className={"border"}></div>
                 <div className={"action"}>

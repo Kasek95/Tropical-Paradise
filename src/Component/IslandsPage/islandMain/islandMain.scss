@@ -84,12 +84,20 @@
          }
          .show {
            display: flex;
+           @media (max-width: 768px) {
+             display: none;
+           }
          }
        }
        .style {
          background-color: white;
          border-top-left-radius: 30px;
          border-bottom-left-radius: 30px;
+         @media (max-width: 768px) {
+           background-color: unset;
+           border-top-left-radius: unset;
+           border-bottom-left-radius: unset;
+         }
        }
      }
      .roms {

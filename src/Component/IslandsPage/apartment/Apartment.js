@@ -11,6 +11,8 @@ import supabase from "../../../supabase";
 import "./apartment.scss"
 import AddOpinionForm from "./addOpinionForm/AddOpinionForm";
 import moment from "moment";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -22,7 +24,19 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
     const [isDisplayForm, setIsDisplayForm] = useState(false)
-    const [dateRange, changeDateRange] = useState(null);
+    const notify = () => {
+
+        toast.success('Gratulacje zarezerwowałeś!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+    }
     const setCloseForm = () => {
         setIsDisplayForm(false)
     }
@@ -38,17 +52,17 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
             .eq("id", id)
         getRooms()
     }
-    const onDateRangeChange = dateRange => {
-        if (dateRange) {
-            changeDateRange(returnMomentDateRange(dateRange[0], dateRange[1]));
-        } else {
-            changeDateRange([]);
-        }
-    };
-
-    const returnMomentDateRange = (start, finish) => {
-        return [moment(start, "YYYY-MM-DD"), moment(finish, "YYYY-MM-DD")];
-    };
+    // const onDateRangeChange = dateRange => {
+    //     if (dateRange) {
+    //         changeDateRange(returnMomentDateRange(dateRange[0], dateRange[1]));
+    //     } else {
+    //         changeDateRange([]);
+    //     }
+    // };
+    //
+    // const returnMomentDateRange = (start, finish) => {
+    //     return [moment(start, "YYYY-MM-DD"), moment(finish, "YYYY-MM-DD")];
+    // };
 
     if(!apartments || !opinions || !reservation) return null
     const singielApartment = apartments.find(el => el.id == apartmentId)
@@ -69,19 +83,21 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
         getReservation()
         getRooms()
         getOpinion()
-        changeDateRange(null)
+        notify()
+
+
     }
 
     const handleDateChange = (date,dateString) => {
         setStartDate(dateString[0])
         setEndDate(dateString[1])
-        onDateRangeChange(dateString)
+
     }
 
     const disabledPastDate = (current) => {
          const now = new Date(current).setHours(0,0,0,0)
          const reservations = reservationToSingielApartment.map(x => ({ start: new Date(x.StartDate).setHours(0,0,0,0), end : new Date(x.EndDate ).setHours(0,0,0,0)}))
-        return current && current < moment().endOf("day") || reservations.some(x => now >= (x.start) && now <= x.end)
+         return current && current < moment().endOf("day") || reservations.some(x => now >= (x.start) && now <= x.end);
     }
 
     return (
@@ -93,14 +109,14 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
                      <h2>Wyspa {singielApartment.Island}, Apartment nr {singielApartment.id}</h2>
                      <section className={"mainCard"}>
                          <div className={"img"}>
-                             <img src={singielApartment.RomImg} alt={singielApartment.RomInfo}/>
-                         </div>
-                         <section className={"reservation"}>
-                             <h4>Zarezerwuj</h4>
-                             <RangePicker onChange={handleDateChange}
-                                          disabledDate={(current) => disabledPastDate(current)}
-                                          value={dateRange !== "" ? dateRange : ""}
-                             >
+                                     <img src={singielApartment.RomImg} alt={singielApartment.RomInfo}/>
+                                     </div>
+                                     <section className={"reservation"}>
+                                     <h4>Zarezerwuj</h4>
+                                     <RangePicker
+                                     onChange={handleDateChange}
+                                     disabledDate={(current) => disabledPastDate(current)}
+                                     >
                              </RangePicker>
                              <span className={"infoRom"}>Cena za noc: {singielApartment.RomPrice} Zł</span>
                              <span className={"infoRom"}>Ilość gwiazdek: <FaStar/>{singielApartment.rating}</span>
@@ -149,6 +165,7 @@ const Apartment = ({apartments,getRooms, opinions, getOpinion, reservation,getRe
                             </Slider>
                      </section>
                  </section>
+                 <ToastContainer/>
             </section>
         </>
     )
