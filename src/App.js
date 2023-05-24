@@ -10,6 +10,7 @@ import Footer from "./Component/footer/Footer";
 import Apartment from "./Component/IslandsPage/apartment/Apartment";
 import Login from "./Component/login/Login";
 import Register from "./Component/register/Register";
+import Terms from "./Component/register/terms/Terms";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
               <Route path="/adminPanel" element={<AdminPanel getApartments={getRooms} getReservation={getReservation} apartments={rooms} opinions={opinions} reservation={reservation} getOpinion={getOpinion}/>}></Route>
               <Route path={"/Login"} element={<Login/>}></Route>
               <Route path={"/register"} element={<Register/>}></Route>
+              <Route path={"/terms"} element={<Terms/>}></Route>
               <Route path="/Strefa-klienta" element={<User getPayments={getPayments} payments={payments} getRooms={getRooms} reservation={reservation} apartments={rooms} getReservation={getReservation}/>}></Route>
           </Routes>
           <Footer/>

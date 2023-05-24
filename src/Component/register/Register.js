@@ -90,7 +90,6 @@ const Register = () => {
 
                             <div className={"customCheckBox"}>
                                 <CustomCheckBox type={"checkbox"} name={"acceptedTos"} />
-
                             </div>
 
 

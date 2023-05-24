@@ -69,6 +69,12 @@
           display: flex;
           align-items: center;
           gap: $ten;
+         span {
+           align-items: center;
+           a {
+             color: white;
+           }
+         }
         }
        .errorText {
          color: red;
