@@ -1,20 +1,20 @@
 @import "../../sass/colors";
-
+@import "../../sass/pixel";
 .opinionsHomePage {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 400px;
-  margin: 100px 0;
+  width: $one-hundred-percent;
+  height: $four-hundred;
+  margin: $one-hundred 0;
    h2 {
      color:#1755e7;
      font-size: clamp(1rem, 0rem + 8vw, 3rem);
      letter-spacing: 2px;
      text-align: center;
      text-transform: uppercase;
-     margin-bottom: 50px;
+     margin-bottom: $fifty;
    }
   .opinionsContainer {
     overflow: hidden;
@@ -22,10 +22,10 @@
       &__box {
          position: relative;
          padding: 1em;
-         border-radius: 8px;
-         box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
+         border-radius: $eight;
+         box-shadow: $three $three $ten rgba(46, 46, 46, 0.18);
          transition: transform .3s;
-         margin-top: 20px;
+         margin-top: $Tweenty;
 
          &:hover {
            transform: scale(.95);
@@ -39,8 +39,8 @@
          transform: translate(-50%, -50%);
 
          img {
-           width: 80px;
-           height: 80px;
+           width: $eighty;
+           height: $eighty;
            object-fit: cover;
            border-radius: 50%;
          }
@@ -63,28 +63,28 @@
 .opinionsHomePage::after {
   content: "";
   position: absolute;
-  top: 50px;
-  left: -30px;
+  top: $fifty;
+  left: -$thirty;
   width: 50%;
-  height: 50px;
+  height: $fifty;
   background-color: white;
   transform: skewX(45deg);
 }
 .opinionsSlide {
     position: relative;
-    height: 420px;
+    height: $four-hundred-tweenty;
 
   .slick-track {
       display: flex;
-      gap: 40px;
-      padding: 20px;
+      gap: $forty;
+      padding: $Tweenty;
     }
     .slick-next {
       position: absolute;
-      top: -30px;
-      right: 20px;
+      top: -$thirty;
+      right: $Tweenty;
       background-color: $dark;
-      border-radius: 5px;
+      border-radius: $five;
       padding: 2px;
       color: $colorWhite;
 
@@ -92,11 +92,11 @@
 
     .slick-prev {
       position: absolute;
-      top: -30px;
-      left: 20px;
+      top: -$thirty;
+      left: $Tweenty;
       background-color: $dark;
       color:$colorWhite;
-      border-radius: 5px;
+      border-radius: $five;
       padding: 2px;
       outline: none;
     }

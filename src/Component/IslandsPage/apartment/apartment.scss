@@ -1,42 +1,42 @@
 @import "../../sass/colors";
-
+@import "../../sass/pixel";
 .apartment {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-  margin-bottom: 100px;
-  margin-top: 100px;
+  padding: $Tweenty;
+  height: $one-hundred-percent;
+  width: $one-hundred-percent;
+  margin-bottom: $one-hundred;
+  margin-top: $one-hundred;
    .apartmentContainer {
      position: relative;
      flex-direction: column;
      display: flex;
-     padding: 20px;
-     min-height: 1100px;
+     padding: $Tweenty;
+     min-height: $one-thousand-one-hundred;
      border: 2px solid $dark;
-     border-radius: 10px;
+     border-radius: $ten;
       h2 {
-        margin-bottom: 20px;
+        margin-bottom: $Tweenty;
       }
       .mainCard {
         display: flex;
         justify-content: space-around;
-         @media (max-width: 910px) {
+         @media (max-width: $nine-hundred-ten) {
            flex-direction: column;
            align-items: center;
          }
         .img {
-          max-width: 500px;
-          margin-right: 20px;
-          margin-bottom: 30px;
+          max-width: $five-hundred;
+          margin-right: $Tweenty;
+          margin-bottom: $thirty;
           img{
-            width: 100%;
-            height: 100%;
-            max-height: 400px;
+            width: $one-hundred-percent;
+            height: $one-hundred-percent;
+            max-height: $four-hundred;
             object-fit: cover;
-            margin: 0 20px;
+            margin: 0 $Tweenty;
           }
         }
         .reservation {
@@ -44,16 +44,16 @@
           flex-direction: column;
           align-items: center;
           h4 {
-            margin-bottom: 20px;
+            margin-bottom: $Tweenty;
           }
           .infoRom {
-            margin-top: 20px;
+            margin-top: $Tweenty;
             font-size: 1.4rem;
           }
           button {
-            margin-top: 10px;
-            @media(max-width: 910px){
-              margin-bottom: 20px;
+            margin-top: $ten;
+            @media(max-width: $nine-hundred-ten){
+              margin-bottom: $Tweenty;
             }
           }
         }
@@ -64,27 +64,27 @@
        margin-bottom: 6px;
      }
      .info {
-       margin-bottom: 20px;
+       margin-bottom: $Tweenty;
      }
      h4 {
        font-size: 1.2rem;
      }
      .backLink {
        position: absolute;
-       bottom: 10px;
-       right: 10px;
+       bottom: $ten;
+       right: $ten;
        text-transform: uppercase;
        text-decoration: none;
        color:$colorWhite;
        background-color: $dark;
-       border-radius: 5px;
-       padding: 5px;
+       border-radius:$five;
+       padding: $five;
        z-index: 1000;
      }
      .heart {
        position: absolute;
-       top: 10px;
-       right: 10px;
+       top: $ten;
+       right: $ten;
        font-size: 1.5rem;
        color: black;
      }
@@ -92,34 +92,34 @@
        color: red;
      }
      .apartmentOpinion{
-       width: 100%;
-       height: 280px;
+       width: $one-hundred-percent;
+       height: $two-hundred-eighty;
           .listOfOpinion{
-            max-height: 280px;
-            width: 100%;
+            max-height: $two-hundred-eighty;
+            width: $one-hundred-percent;
             overflow: auto;
             .opinionContainer {
               position: relative;
-              width: 100%;
-              min-height: 50px;
+              width: $one-hundred-percent;
+              min-height: $fifty;
               border: 1px solid grey;
-              border-radius: 30px;
-              margin-bottom: 10px;
+              border-radius: $thirty;
+              margin-bottom: $ten;
               list-style: none;
-              padding: 0 20px 0 20px;
+              padding: 0 $Tweenty 0 $Tweenty;
                h5{
-                 margin-top: 10px;
+                 margin-top: $ten;
                }
               .userOpinion {
-                margin-bottom: 20px;
+                margin-bottom: $Tweenty;
               }
               .rating {
                 position: absolute;
                 display: flex;
                 align-items: center;
-                top: 5px;
-                right: 20px;
-                gap: 5px;
+                top: $five;
+                right: $Tweenty;
+                gap: $five;
                 .star {
                   color: gold;
                 }
@@ -134,17 +134,17 @@
        align-items: center;
        top: 0;
        left: 0;
-       width: 100%;
-       height: 100%;
+       width: $one-hundred-percent;
+       height: $one-hundred-percent;
        background: rgba(0,0,0,0.3);
        z-index: 10;
      }
       .addOpinion {
-        width: 100px;
-        height: 30px;
-        border-radius: 30px;
+        width: $one-hundred;
+        height: $thirty;
+        border-radius: $thirty;
         background: #2e2e2e;
-        margin-top: 20px;
+        margin-top: $Tweenty;
         color: white;
       }
      .otherApartments {
@@ -152,31 +152,31 @@
        align-items: center;
        overflow: hidden;
        align-self: flex-end;
-       width: 100%;
-       height: 300px;
-       margin-bottom: 30px;
+       width: $one-hundred-percent;
+       height: $three-hundred;
+       margin-bottom: $thirty;
        .romContainer {
          position: relative;
-         width: 100%;
-         height: 100%;
+         width: $one-hundred-percent;
+         height: $one-hundred-percent;
             .imgContainer {
-              width: 100%;
-              height:150px;
+              width: $one-hundred-percent;
+              height:$one-hundred-fifty;
               img {
-                 width: 100%;
-                 height: 100%;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
+                 width: $one-hundred-percent;
+                 height: $one-hundred-percent;
+                border-top-left-radius: $ten;
+                border-top-right-radius: $ten;
                  object-fit: cover;
                }
             }
             .overview {
               display: flex;
               justify-content: space-between;
-              margin: 10px 10px;
+              margin: $ten $ten;
                span:nth-child(2) {
                  display: flex;
-                 gap: 5px;
+                 gap: $five;
                  align-items: center;
                }
             }
@@ -184,12 +184,12 @@
              display: flex;
              justify-content: space-between;
              align-items: center;
-             margin: 0 10px;
+             margin: 0 $ten;
               a {
                 text-decoration: none;
-                padding: 5px;
+                padding: $five;
                 background-color: $dark;
-                border-radius: 10px;
+                border-radius: $ten;
                 color: white;
               }
            }
@@ -203,23 +203,23 @@
 
 .slide {
   position: relative;
-  width: 100%;
-  height: 220px;
+  width: $one-hundred-percent;
+  height: $two-hundred-tweenty;
   overflow: hidden;
 
 
   .slick-track {
     display: flex;
-    gap: 20px;
-    padding: 5px;
+    gap: $Tweenty;
+    padding: $five;
   }
   .slick-next {
 
     position: absolute;
-    top: -30px;
-    right: 20px;
+    top: -$thirty;
+    right: $Tweenty;
     background-color: $dark;
-    border-radius: 5px;
+    border-radius: $five;
     padding: 2px;
     color: $colorWhite;
 
@@ -228,11 +228,11 @@
   .slick-prev {
 
     position: absolute;
-    top: -30px;
-    left: 20px;
+    top: -$thirty;
+    left: $Tweenty;
     background-color: $dark;
     color:$colorWhite;
-    border-radius: 5px;
+    border-radius: $five;
     padding: 2px;
     outline: none;
   }
@@ -243,7 +243,7 @@
   flex-direction: column;
 }
 .ant-picker-dropdown-range {
-  @media (max-width: 320px) {
+  @media (max-width: $three-hundred-tweenty) {
     left: 14px !important;
   }
 }

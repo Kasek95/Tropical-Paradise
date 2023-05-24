@@ -50,7 +50,7 @@ const AddOpinionForm = ({setIsDisplayForm,apartmentId,getOpinion}) => {
     >
         {() => (
             <Form className={"addOpinionForm"}>
-                <button type={"reset"} onClick={closeForm}  className={"icon"} type={"reset"}><i className="fa-solid fa-x"></i></button>
+                <button type={"reset"} onClick={closeForm}  className={"icon"} ><i className="fa-solid fa-x"></i></button>
                 <h2>Add Opinion Form</h2>
                 <div className={"customSelect"}>
                     <CustomSelect

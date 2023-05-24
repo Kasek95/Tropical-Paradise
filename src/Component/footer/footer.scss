@@ -1,4 +1,5 @@
 @import "../sass/colors";
+@import "../sass/pixel";
 
 .footer {
   position: relative;
@@ -6,28 +7,28 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 405px;
+  min-height: $four-hundred-five;
   color: $colorWhite;
   background-color: $dark;
 
    &__boxes {
      display: flex;
-     gap: 20px;
+     gap: $Tweenty;
      justify-content: space-between;
-     margin-bottom: 20px;
-     margin-top: 100px;
-     padding: 20px;
+     margin-bottom: $Tweenty;
+     margin-top: $one-hundred;
+     padding: $Tweenty;
 
    }
 
   &__box {
     display: flex;
-    width: 483px;
+    width: $four-hundred-eighty-three;
     flex-direction: column;
   }
 
   &__box-title {
-    margin-bottom: 20px;
+    margin-bottom: $Tweenty;
   }
 
 
@@ -40,7 +41,7 @@
 
   &__box-list-item {
     list-style: none;
-    margin-bottom: 10px;
+    margin-bottom: $ten;
     color: white;
      a {
        text-decoration: none;
@@ -60,13 +61,10 @@
 footer::after {
   content: "";
   position: absolute;
-  top:-50px;
-  left: -30px;
+  top:-$fifty;
+  left: -$thirty;
   width: 50%;
-  height: 50px;
+  height: $fifty;
   background-color: #2e2e2e;
   transform: skewX(45deg);
-
-
-
 }

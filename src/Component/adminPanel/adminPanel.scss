@@ -1,21 +1,22 @@
 @import "../sass/colors";
+@import "../sass/pixel";
 
 .adminPanel {
   display: flex;
   font-family: $openSans;
-  width: 100%;
+  width: $one-hundred-percent;
   height: 110vh;
-  margin: 80px 0 0 0;
+  margin: $eighty 0 0 0;
   background-color: #BDDDF1;
-  @media (max-width: 768px) {
+  @media (max-width: $seven-hundred-sixty-eight) {
     flex-direction: column;
   }
 
 
   .panel {
     position: relative;
-    height: 1100px;
-    border: 2px solid #2e2e2e;
+    height: $one-thousand-one-hundred;
+    border: $two solid #2e2e2e;
     background-image: url("../../assets/backgroundAdmin.jpg");
     background-size: cover;
     background-position: center;
@@ -26,32 +27,32 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 100px;
-      width: 100%;
-      padding: 0 20px;
+      height: $one-hundred;
+      width: $one-hundred-percent;
+      padding: 0 $Tweenty;
       background: #10437c;
       color: white;
-      @media (max-width: 768px) {
+      @media (max-width: $seven-hundred-sixty-eight) {
         flex-direction: unset;
       }
       h2 {
-        margin: 20px 0;
+        margin: $Tweenty 0;
       }
       .navWrapper {
         display: flex;
         align-items: center;
-        gap: 10px;
-        @media (max-width: 768px) {
+        gap: $ten;
+        @media (max-width: $seven-hundred-sixty-eight) {
           display: flex;
         }
         .hamburger {
           display: none;
-          padding: 2px;
+          padding: $two;
           border: 1px solid $colorWhite;
-          border-radius: 5px;
+          border-radius: $five;
           font-size: 1.2rem;
           color: $colorWhite;
-          @media (max-width: 768px) {
+          @media (max-width: $seven-hundred-sixty-eight) {
             display: flex;
           }
         }
@@ -59,23 +60,23 @@
         .navigationAdmin {
           display: flex;
           cursor: pointer;
-          gap: 10px;
-          @media (max-width: 768px) {
+          gap: $ten;
+          @media (max-width: $seven-hundred-sixty-eight) {
             position: absolute;
             display: none;
             flex-direction: column;
             align-items: center;
             background: #10437c;
-            top: 90px;
+            top: $ninety;
             left: 0;
-            width: 100%;
+            width: $one-hundred-percent;
             z-index: 10;
           }
 
           span {
-            margin-bottom: 10px;
-            @media (max-width: 768px) {
-              padding: 10px;
+            margin-bottom: $ten;
+            @media (max-width: $seven-hundred-sixty-eight) {
+              padding: $ten;
             }
           }
         }
@@ -83,10 +84,10 @@
         .logout {
           background: none;
           border: 1px solid $colorWhite;
-          border-radius: 30px;
+          border-radius: $thirty;
           color: $colorWhite;
           text-transform: uppercase;
-          padding: 5px;
+          padding: $five;
           cursor: pointer;
         }
 
@@ -99,20 +100,20 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      padding: 20px;
-      width: 100%;
-      height: 100%;
-      @media (max-width: 768px) {
+      padding: $Tweenty;
+      width: $one-hundred-percent;
+      height: $one-hundred-percent;
+      @media (max-width: $seven-hundred-sixty-eight) {
         justify-content: unset;
       }
       h3 {
-        margin-bottom: 20px;
+        margin-bottom: $Tweenty;
       }
 
       .apartments {
 
-        width: 100%;
-        min-height: 800px;
+        width: $one-hundred-percent;
+        min-height: $eight-hundred;
       }
     }
 
@@ -120,64 +121,64 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      padding: 20px;
-      width: 100%;
-      height: 100%;
+      padding: $Tweenty;
+      width: $one-hundred-percent;
+      height: $one-hundred-percent;
 
       h3 {
-        margin-bottom: 20px;
+        margin-bottom: $Tweenty;
       }
 
       .opinion {
-        width: 100%;
-        min-height: 800px;
+        width: $one-hundred-percent;
+        min-height: $eight-hundred;
       }
     }
     .reservationMenu {
       position: relative;
       display: flex;
       flex-direction: column;
-      padding: 20px;
-      width: 100%;
-      height: 100%;
-      @media (max-width: 768px) {
+      padding: $Tweenty;
+      width: $one-hundred-percent;
+      height: $one-hundred-percent;
+      @media (max-width: $seven-hundred-sixty-eight) {
         justify-content: unset;
       }
       h3 {
-        margin-bottom: 20px;
+        margin-bottom: $Tweenty;
       }
       .singielReservation {
-        width: 100%;
-        min-height: 800px;
+        width: $one-hundred-percent;
+        min-height: $eight-hundred;
       }
     }
     .addApartment {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      width: 100%;
-      height: 100%;
-      @media (max-width: 768px) {
+      padding: $Tweenty;
+      width: $one-hundred-percent;
+      height:$one-hundred-percent;
+      @media (max-width: $seven-hundred-sixty-eight) {
         align-items: unset;
-        margin-top: 200px;
+        margin-top: $two-hundred;
       }
     }
     .paginationBttns {
       position: absolute;
-      bottom: 100px;
+      bottom: $one-hundred;
       right: 0;
       display: flex;
       justify-content: center;
-      margin-top: 50px;
-      width: 100%;
-      height: 40px;
+      margin-top: $fifty;
+      width: $one-hundred-percent;
+      height: $forty;
       list-style: none;
 
       a {
-        padding: 10px;
-        margin: 8px;
-        border-radius: 5px;
+        padding: $ten;
+        margin: $eight;
+        border-radius: $five;
         border: 1px solid #2b2eff;
         color: #2b2eff;
         cursor: pointer;

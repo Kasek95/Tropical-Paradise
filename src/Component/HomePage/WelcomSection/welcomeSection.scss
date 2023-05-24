@@ -1,12 +1,13 @@
 @import "../../sass/colors";
+@import "../../sass/pixel";
 .welcome {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 726px;
-  width: 100%;
+  height: $seven-hundred-tweenty-six;
+  width: $one-hundred-percent;
   background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../../../assets/img.png");
   background-size: cover;
   background-position: center;
@@ -18,7 +19,7 @@
     text-align: center;
     font-size: 6.6rem;
     color:$colorWhite;
-      @media (max-width: 768px){
+      @media (max-width: $seven-hundred-sixty-eight){
         font-size: 4.4rem;
       }
   }
@@ -27,7 +28,7 @@
     font-size: 2.2rem;
     color: $colorWhite;
     text-transform: uppercase;
-     @media (max-width: 768px) {
+     @media (max-width: $seven-hundred-sixty-eight) {
        font-size: 1.5rem;
      }
 
@@ -38,7 +39,7 @@
     font-size: 1.4rem;
     background: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: $eight;
     color: #2e2e2e;
     text-decoration: none;
     text-transform: uppercase;
@@ -47,9 +48,9 @@
   .white-block {
     position: absolute;
     bottom:-1px;
-    left: -30px;
+    left: -$thirty;
     background-color: white;
-    height: 50px;
+    height: $fifty;
     width: 50%;
     transform: skewX(45deg);
   }

@@ -1,53 +1,54 @@
+@import "../../sass/pixel";
 .contact {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  min-height: 500px;
+  width: $one-hundred-percent;
+  min-height: $five-hundred;
   background-color: #eee;
-  padding: 10px;
+  padding: $ten;
   .contact-container {
-    margin:100px 0;
+    margin:$one-hundred 0;
     h2 {
       color:#1755e7;
       font-size: clamp(1rem, 0rem + 8vw, 3rem);
       letter-spacing: 2px;
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: $fifty;
     }
     .contactForm {
       display: flex;
       flex-direction: column;
       label {
         text-transform: uppercase;
-        margin-bottom: 10px;
+        margin-bottom: $ten;
       }
       input {
-        margin-bottom: 20px;
-        height: 30px;
+        margin-bottom: $Tweenty;
+        height: $thirty;
         outline: none;
         border: none;
-        border-radius: 10px;
-        padding: 10px;
+        border-radius: $ten;
+        padding: $ten;
       }
       textarea {
-        padding: 10px;
+        padding: $ten;
         resize: unset;
-        height: 200px;
+        height: $two-hundred;
         border: none;
-        border-radius: 10px;
+        border-radius: $ten;
         outline: none;
-        margin-bottom: 10px;
+        margin-bottom: $ten;
       }
       .sendEmail {
         align-self: flex-end;
         padding: 1em;
-        width: 100%;
-        max-width: 300px;
+        width: $one-hundred-percent;
+        max-width: $three-hundred;
         color: #fff;
         border: none;
-        border-radius: 8px;
+        border-radius: $eight;
         background-color: #1755e7;
         cursor: pointer;
       }
@@ -57,10 +58,10 @@
 .contact::before {
   content: "";
   position: absolute;
-  top: -50px;
-  right: -30px;
+  top: -$fifty;
+  right: -$thirty;
   width: 50%;
-  height: 50px;
+  height: $fifty;
   background-color: #eee;
   transform: skewX(-45deg);
 }

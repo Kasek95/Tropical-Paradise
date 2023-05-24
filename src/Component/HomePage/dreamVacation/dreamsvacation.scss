@@ -1,13 +1,14 @@
+@import "../../sass/pixel";
 .dreams {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: $one-hundred-percent;
    .wrapper {
      display: flex;
      justify-content: center;
      flex-direction: column;
-     margin-top: 100px;
-     margin-bottom: 100px;
+     margin-top: $one-hundred;
+     margin-bottom: $one-hundred;
      h2 {
        position: relative;
        margin-bottom: 2em;
@@ -22,36 +23,36 @@
        display: flex;
        align-items: center;
        justify-content: space-around;
-       margin-top:  20px;
-       padding: 20px;
-       width: 100%;
-        @media (max-width: 768px) {
+       margin-top:  $Tweenty;
+       padding: $Tweenty;
+       width: $one-hundred-percent;
+        @media (max-width: $seven-hundred-sixty-eight) {
           flex-direction: column;
           justify-content: center;
           margin: 0 auto;
         }
        .dreams__box-img {
-         max-height: 400px;
+         max-height: $four-hundred;
          margin: 0 auto;
            img{
-             width: 100%;
+             width: $one-hundred-percent;
 
-             @media (max-width: 768px ) {
-               height: 100%;
+             @media (max-width: $seven-hundred-sixty-eight ) {
+               height: $one-hundred-percent;
              }
            }
        }
        .dreams__box-text {
-         width: 100%;
-         padding-left: 150px;
-          @media (max-width: 768px) {
-            max-width: 600px;
+         width: $one-hundred-percent;
+         padding-left: $one-hundred-fifty;
+          @media (max-width: $seven-hundred-sixty-eight) {
+            max-width: $six-hundred;
             padding: unset;
           }
          .dreams__title {
            font-size: clamp(1rem, 0.5714rem + 1.1429vw, 2rem);
-           margin-top: 20px;
-           margin-bottom: 20px;
+           margin-top: $Tweenty;
+           margin-bottom: $Tweenty;
          }
          .dreams__text {
            font-size: clamp(1rem, 0rem + 8vw, 1.3rem);
@@ -62,35 +63,35 @@
        display: flex;
        align-items: center;
        flex-direction: row-reverse;
-       margin-top: 20px;
-       padding: 20px;
-       width: 100%;
-       @media (max-width: 768px) {
+       margin-top: $Tweenty;
+       padding: $Tweenty;
+       width: $one-hundred-percent;
+       @media (max-width: $seven-hundred-sixty-eight) {
          flex-direction: column;
          justify-content: center;
          margin: 0 auto;
        }
        .dreams__box-img {
-         max-height: 400px;
+         max-height: $four-hundred;
          margin: 0 auto;
          img{
-           width: 100%;
-           @media (max-width: 768px ) {
-             height: 100%;
+           width: $one-hundred-percent;
+           @media (max-width: $seven-hundred-sixty-eight ) {
+             height: $one-hundred-percent;
            }
          }
        }
        .dreams__box-text {
-         width: 100%;
-         padding-right: 150px;
-         @media (max-width: 768px) {
-           max-width: 600px;
+         width: $one-hundred-percent;
+         padding-right: $one-hundred-fifty;
+         @media (max-width: $seven-hundred-sixty-eight) {
+           max-width: $six-hundred;
            padding: unset;
          }
          .dreams__title {
            font-size: clamp(1rem, 0.5714rem + 1.1429vw, 2rem);
-           margin-top: 20px;
-           margin-bottom: 20px;
+           margin-top: $Tweenty;
+           margin-bottom: $Tweenty;
          }
          .dreams__text {
            font-size: clamp(1rem, 0rem + 8vw, 1.3rem);

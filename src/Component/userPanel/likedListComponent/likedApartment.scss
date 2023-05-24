@@ -1,27 +1,28 @@
+@import "../../sass/pixel";
 .apartmentLiked {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: $ten;
   background: white;
-  border-radius: 10px;
-  width: 100%;
-  min-height: 100px;
-  margin-bottom: 10px;
-  padding: 10px;
-  @media (max-width: 425px) {
+  border-radius: $ten;
+  width: $one-hundred-percent;
+  min-height: $one-hundred;
+  margin-bottom: $ten;
+  padding:$ten;
+  @media (max-width: $four-hundred-tweenty-five) {
     flex-direction: column;
     min-height: unset;
   }
   p {
-    width: 100%;
-    max-width: 500px;
+    width: $one-hundred-percent;
+    max-width: $five-hundred;
   }
   .remove {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right:$ten;
+    top: $ten;
     font-size: 1.2rem;
     color: #d84851;
     cursor: pointer;
@@ -29,25 +30,25 @@
    .infoApartment {
      display: flex;
      flex-direction: column;
-     margin-left: 20px;
+     margin-left: $Tweenty;
       span {
-        margin-bottom: 5px;
+        margin-bottom: $five;
       }
      img {
-       width: 100px;
-       height: 100px;
+       width: $one-hundred;
+       height: $one-hundred;
        object-fit: cover;
      }
    }
    .price {
      position: relative;
      display: flex;
-     margin-right: 20px;
+     margin-right: $Tweenty;
      .border {
        width: 1px;
-       height: 100px;
+       height: $one-hundred;
        background-color: #e7e7e7;
-       @media (max-width: 425px) {
+       @media (max-width: $four-hundred-tweenty-five) {
          border: none;
          height: unset;
          width: unset;
@@ -57,14 +58,14 @@
      .action{
        display: flex;
        flex-direction: column;
-       margin-left: 10px;
+       margin-left: $ten;
        span {
-         margin-bottom: 10px;
+         margin-bottom: $ten;
          color: #d84851;
        }
        .removeBtn {
-         height: 50px;
-         padding: 5px;
+         height: $fifty;
+         padding: $five;
          background: none;
          border:1px solid #10437c;
          cursor: pointer;

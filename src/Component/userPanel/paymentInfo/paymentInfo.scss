@@ -1,17 +1,18 @@
+@import "../../sass/pixel";
 .PaymentInfo {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: $Tweenty;
   background-color: white;
   border: 1px solid white;
    span {
-     margin-bottom: 10px;
+     margin-bottom: $ten;
    }
   .addCart {
-    width: 100px;
-    height: 30px;
+    width: $one-hundred;
+    height: $thirty;
     border: none;
-    border-radius: 10px;
+    border-radius: $ten;
     background-color: #10437c;
     color: white;
     cursor: pointer;

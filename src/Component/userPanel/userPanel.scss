@@ -1,77 +1,78 @@
+@import "../sass/pixel";
 .UserPanel {
   display: flex;
   min-height: 100vh;
-  width: 100%;
+  width: $one-hundred-percent;
   background-color: #BDDDF1;
-  margin-top: 80px;
+  margin-top: $eighty;
     .userContainer {
      position: relative;
-     height: 1100px;
-     width: 100%;
+     height: $one-thousand-one-hundred;
+     width: $one-hundred-percent;
      display: flex;
      align-items: center;
      justify-content: space-around;
-     margin-top: 100px;
-      margin-bottom: 100px;
-      @media (max-width: 1338px) {
+     margin-top: $one-hundred;
+      margin-bottom: $one-hundred;
+      @media (max-width: $one-thousand-three-hundred-thirty-eight) {
         display: flex;
         flex-direction: column;
       }
      .userAction {
        display: none;
        flex-direction: column;
-       margin: 100px auto;
-       min-height: 1000px;
-       padding: 5px;
-       @media (max-width: 1465px) {
-         margin-left: 128px;
+       margin: $one-hundred auto;
+       min-height: $one-thousand;
+       padding: $five;
+       @media (max-width: $one-thousand-four-hundred-sixty-five) {
+         margin-left: $one-hundred-tweenty-eight;
        }
-       @media (max-width: 1338px) {
+       @media (max-width: $one-thousand-three-hundred-thirty-eight) {
          margin-left: unset;
-         margin-top: 200px;
-         width: 100%;
+         margin-top: $two-hundred;
+         width: $one-hundred-percent;
        }
        h3 {
-         margin-bottom: 20px;
+         margin-bottom: $Tweenty;
        }
      }
       .pulpit {
         display: none;
         flex-direction: column;
-        margin: 100px auto;
-        min-height: 1000px;
-        padding: 10px;
-        @media (max-width: 1465px) {
-          margin-left: 128px;
+        margin: $one-hundred auto;
+        min-height: $one-thousand;
+        padding: $ten;
+        @media (max-width: $one-thousand-four-hundred-sixty-five) {
+          margin-left: $one-hundred-tweenty-eight;
         }
-        @media (max-width: 1338px) {
+        @media (max-width: $one-thousand-three-hundred-thirty-eight) {
           margin-left: unset;
-          margin-top: 200px;
-          width: 100%;
+          margin-top: $two-hundred;
+          width: $one-hundred-percent;
         }
 
         .containerClient {
           display: flex;
-          gap: 20px;
+          gap: $Tweenty;
           z-index: 3;
-          width: 100%;
-          @media (max-width: 768px){
+          width: $one-hundred-percent;
+          @media (max-width: $seven-hundred-sixty-eight){
             flex-direction: column;
           }
            .login {
-             width: 100%;
-             padding: 20px;
+             width: $one-hundred-percent;
+             padding: $Tweenty;
              background-color: white;
-             max-height: 400px;
+             max-height: $four-hundred;
              h3 {
-               margin-bottom: 20px;
+               margin-bottom: $Tweenty;
              }
               .infoSpan {
                 font-weight: bold;
               }
              .listOfProfit {
-               margin-top: 20px;
-               margin-bottom: 20px;
+               margin-top: $Tweenty;
+               margin-bottom: $Tweenty;
                 li {
                   display: flex;
                   align-items: center;
@@ -82,8 +83,8 @@
                 }
              }
              .btnNavigate {
-               width: 100%;
-               height: 40px;
+               width: $one-hundred-percent;
+               height: $forty;
                text-align: center;
                background-color: #1e5085;
                border: none;
@@ -96,18 +97,18 @@
              }
            }
           .linkToReservation {
-            width: 100%;
-            padding: 20px;
+            width: $one-hundred-percent;
+            padding: $Tweenty;
             background-color: white;
-            max-height: 400px;
+            max-height: $four-hundred;
             .favorites {
               position: relative;
               display: flex;
               align-items: center;
-              margin-top: 30px;
-              margin-bottom: 20px;
-              height: 30px;
-              gap: 20px;
+              margin-top: $thirty;
+              margin-bottom: $Tweenty;
+              height: $thirty;
+              gap: $Tweenty;
               font-size: 1.5rem;
                .likedIcon {
                  color: #205189;
@@ -115,7 +116,7 @@
               .liked {
                 background-color: red;
                 border-radius: 50%;
-                padding: 5px;
+                padding: $five;
                 font-size: 1rem;
                 color: white;
               }
@@ -129,7 +130,7 @@
             }
             .borderBottom {
               border: 1px solid #e7e7e7;
-              margin-bottom: 20px;
+              margin-bottom: $Tweenty;
             }
             .navigateToRegister {
               display: flex;
@@ -137,7 +138,7 @@
               .userIcon {
                 font-size: 3rem;
                 color: #205189;
-                margin-right: 30px;
+                margin-right: $thirty;
               }
               a {
                 color: #205189;
@@ -152,39 +153,39 @@
           display: flex;
           flex-direction: column;
           background-color: white;
-          width: 100%;
-          min-height: 400px;
-          padding: 10px;
+          width: $one-hundred-percent;
+          min-height: $four-hundred;
+          padding: $ten;
           overflow: hidden;
-          margin-top: 100px;
+          margin-top: $one-hundred;
            h3 {
-             margin-bottom: 20px;
+             margin-bottom: $Tweenty;
            }
           .sliderOfert {
             position: relative;
             display: flex;
-            width: 100%;
-            min-height: 300px;
+            width: $one-hundred-percent;
+            min-height: $three-hundred;
             white-space: nowrap;
             .slide-carousel {
               display: flex;
-              gap: 10px;
-              padding: 5px;
+              gap: $ten;
+              padding: $five;
               animation: slide 35s infinite linear;
 
               .ofertContainer {
-              width: 300px;
-              min-height: 350px;
+              width: $three-hundred;
+              min-height: $three-hundred-fifty;
 
               img {
-                width: 300px;
-                height: 200px;
+                width:$three-hundred;
+                height: $two-hundred;
                 object-fit: cover;
-                margin-bottom: 10px;
+                margin-bottom: $ten;
               }
 
               h4 {
-                margin-bottom: 20px;
+                margin-bottom: $Tweenty;
               }
 
               .infoCont {
@@ -192,15 +193,15 @@
                 flex-direction: column;
 
                 span {
-                  margin-bottom: 10px;
+                  margin-bottom: $ten;
                 }
               }
 
               .checkOfert {
-                padding: 5px;
+                padding: $five;
                 background-color: #1e5085;
                 border: none;
-                border-radius: 10px;
+                border-radius: $ten;
                 outline: none;
                 cursor: pointer;
                 a {
@@ -219,50 +220,50 @@
       .likedApartments {
         display: none;
         flex-direction: column;
-        margin: 100px auto;
-        min-height: 1000px;
-        padding: 10px;
-        @media (max-width: 1465px) {
-          margin-left: 128px;
+        margin: $one-hundred auto;
+        min-height: $one-thousand;
+        padding: $ten;
+        @media (max-width: $one-thousand-four-hundred-sixty-five) {
+          margin-left: $one-hundred-tweenty-eight;
         }
-        @media (max-width: 1338px) {
+        @media (max-width: $one-thousand-three-hundred-thirty-eight) {
           margin-left: unset;
-          margin-top: 200px;
-          width: 100%;
+          margin-top:$two-hundred;
+          width:$one-hundred-percent;
         }
-        @media (max-width: 375px) {
+        @media (max-width: $three-hundred-seventy-five) {
           overflow-y: auto;
         }
         h3 {
-          margin-bottom: 20px;
+          margin-bottom: $Tweenty;
         }
       }
       .payment {
         display: none;
         flex-direction: column;
-        margin: 100px auto;
-        min-height: 1000px;
-        padding: 10px;
+        margin: $one-hundred auto;
+        min-height: $one-thousand;
+        padding: $ten;
 
-        @media (max-width: 1465px) {
-          margin-left: 128px;
+        @media (max-width: $one-thousand-four-hundred-sixty-five) {
+          margin-left: $one-hundred-tweenty-eight;
         }
-        @media (max-width: 1338px) {
+        @media (max-width: $one-thousand-three-hundred-thirty-eight) {
           margin-left: unset;
-          margin-top: 200px;
-          width: 100%;
+          margin-top: $two-hundred;
+          width: $one-hundred-percent;
         }
         h3 {
-          margin-bottom: 20px;
+          margin-bottom: $Tweenty;
         }
         .addCardForm {
           display: none;
           justify-content: center;
-          margin-top: 20px;
-          width: 100%;
-          min-height: 300px;
+          margin-top: $Tweenty;
+          width: $one-hundred-percent;
+          min-height: $three-hundred;
           background: purple url("../../assets/bgCard.png") center/ cover;
-          padding: 5px;
+          padding: $five;
         }
         .show {
           display: flex;

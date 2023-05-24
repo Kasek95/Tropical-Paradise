@@ -5,6 +5,7 @@ import "react-credit-cards-2/dist/lib/styles.scss"
 import supabase from "../../../supabase";
 import Cleave from "cleave.js/react"
 import {AiOutlineCloseCircle} from "react-icons/ai"
+import {toast} from "react-toastify";
 
 const CardForm = ({user,getPayments,closeForm}) => {
       const [name, setName] = useState("")
@@ -30,6 +31,16 @@ const CardForm = ({user,getPayments,closeForm}) => {
            cardYear: epixry,
            userId: user.id
        });
+       toast.success('Dodałeś kartę!', {
+           position: "top-right",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+           theme: "light",
+       })
        getPayments()
        setName("")
        setCardNumber("")

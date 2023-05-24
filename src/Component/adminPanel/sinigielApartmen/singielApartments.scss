@@ -1,30 +1,31 @@
+@import "../../sass/pixel";
 .apartmentCont {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 100px;
-  margin-bottom: 5px;
+  width: $one-hundred-percent;
+  height: $one-hundred;
+  margin-bottom: $five;
   border: 1px solid darkgray;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: $ten;
+  padding: $ten;
    .apartmentInfo {
      display: flex;
-     margin-left: 10px;
-     gap: 10px;
+     margin-left: $ten;
+     gap: $ten;
      flex-wrap: wrap;
    }
   .btnContainer {
     display: flex;
-    gap: 10px;
-    margin-right: 10px;
+    gap: $ten;
+    margin-right: $ten;
      .btn {
-       border-radius: 10px;
+       border-radius: $ten;
        border: 1px solid white;
        background: none;
        color: white;
        font-size: 1.3rem;
-       padding: 5px;
+       padding: $five;
      }
   }
   .editApartment {
@@ -34,29 +35,29 @@
     align-items: center;
     top: 0;
     left: 0;
-    width: 100%;
+    width: $one-hundred-percent;
     height: 115%;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur($fifteen);
     z-index: 1;
     .form {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      max-width: 400px;
-      min-height: 500px;
-      padding: 5px;
+      max-width: $four-hundred;
+      min-height: $five-hundred;
+      padding: $five;
       border: 1px solid white;
-      border-radius: 10px;
+      border-radius: $ten;
        h2{
          text-align: center;
-         margin-bottom: 20px;
+         margin-bottom: $Tweenty;
        }
       .closeForm {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: $ten;
+        right: $ten;
         border: 1px solid white;
-        padding: 5px;
+        padding: $five;
         border-radius: 50%;
         background: none;
          i {
@@ -66,15 +67,15 @@
       .customInput {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        margin-bottom: 20px;
+        width: $one-hundred-percent;
+        margin-bottom: $Tweenty;
          label {
-           margin-bottom: 10px;
+           margin-bottom: $ten;
          }
         input {
           outline: none;
-          height: 30px;
-          padding-left: 10px;
+          height: $thirty;
+          padding-left: $ten;
           color: white;
           background: none;
           border: none;
@@ -87,10 +88,10 @@
       .customTextArea {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        margin-bottom: 20px;
+        width: $one-hundred-percent;
+        margin-bottom: $Tweenty;
          label{
-           margin-bottom: 10px;
+           margin-bottom: $ten;
          }
         textarea {
           background: none;
@@ -101,10 +102,10 @@
       .customSelect {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: $one-hundred-percent;
 
          label {
-           margin-bottom: 10px;
+           margin-bottom: $ten;
          }
          select {
            color: white;
@@ -116,14 +117,14 @@
          }
       }
       .saveBtn {
-        width: 100px;
-        height: 30px;
+        width: $one-hundred;
+        height: $thirty;
         background: none;
-        border-radius: 10px;
+        border-radius: $ten;
         border: 1px solid white;
         text-transform: uppercase;
         color: white;
-        margin: 20px auto;
+        margin: $Tweenty auto;
       }
     }
 

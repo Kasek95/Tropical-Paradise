@@ -12,7 +12,7 @@ const Reservation = ({el, getReservation}) => {
              .delete()
              .eq("id",id)
          getReservation()
-         toast.success('usunąłeś rezerwację!', {
+         toast.success('Usunąłeś rezerwację!', {
              position: "top-right",
              autoClose: 5000,
              hideProgressBar: false,

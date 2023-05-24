@@ -1,5 +1,6 @@
 @import "../../sass/colors";
 @import "../../sass/mixin";
+@import "../../sass/pixel";
 .offers {
   display: flex;
   justify-content: center;
@@ -12,29 +13,29 @@
     font-size: clamp(1rem, 0rem + 8vw, 3rem);
     letter-spacing: 2px;
     color: white;
-    margin-top: 100px;
+    margin-top: $one-hundred;
 
   }
   .ofert-container {
-    margin: 100px 0;
-    padding: 10px;
+    margin: $one-hundred 0;
+    padding: $ten;
   }
   &__option {
     display: flex;
-    margin: 20px 0;
-    box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+    margin: $Tweenty 0;
+    box-shadow: $five $five $ten rgba(46, 46, 46, 0.18);
     background-color: $pure-white;
     overflow: hidden;
-     @media (max-width: 990px) {
+     @media (max-width: $nine-hundred-ninety) {
        display: flex;
        flex-direction: column;
      }
     &-img {
-      width: 100%;
-      max-width: 450px;
-      max-height: 300px;
+      width: $one-hundred-percent;
+      max-width: $four-hundred-fifty;
+      max-height: $three-hundred;
       transition: transform .3s;
-       @media (max-width: 990px) {
+       @media (max-width: $nine-hundred-ninety) {
          max-width: unset;
        }
       &:hover {
@@ -63,11 +64,11 @@
     &-btn {
       margin-top: 1em;
       padding: 0.8em;
-      width: 100%;
+      width: $one-hundred-percent;
       color: $pure-white;
       background-color: $main-color;
       border: none;
-      border-radius: 8px;
+      border-radius: $eight;
       cursor: pointer;
        a {
          text-decoration: none;
@@ -81,7 +82,7 @@
   &__option:nth-of-type(2) {
     display: flex;
     flex-direction: row-reverse;
-    @media (max-width: 990px) {
+    @media (max-width: $nine-hundred-ninety) {
       display: unset;
       flex-direction: unset;
     }
@@ -90,20 +91,20 @@
 .offers::before {
   content: "";
   position: absolute;
-  top: -5px;
-  right: -30px;
+  top: -$five;
+  right: -$thirty;
   width: 50%;
-  height: 50px;
+  height: $fifty;
   background-color: white;
   transform: skewX(45deg);
 }
 .offers::after {
   content: "";
   position: absolute;
-  bottom: -5px;
-  left: -30px;
+  bottom: -$five;
+  left: -$thirty;
   width: 50%;
-  height: 50px;
+  height: $fifty;
   background-color: white;
   transform: skewX(45deg);
 }

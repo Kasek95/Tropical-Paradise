@@ -13,6 +13,9 @@ import UserReservation from "./userReservation/UserReservation";
 import PaymentInfo from "./paymentInfo/PaymentInfo";
 import Card from "./card/Card";
 import CardForm from "./cardForm/CardForm";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const  User = ({apartments,reservation,getRooms,getReservation,payments,getPayments}) => {
     const user = useSelector((state) => state.user.value.user)
@@ -123,6 +126,7 @@ const  User = ({apartments,reservation,getRooms,getReservation,payments,getPayme
                          </section>
                     </section>
                 </section>
+                <ToastContainer/>
             </main>
         </>
     )

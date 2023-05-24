@@ -1,12 +1,11 @@
-
+@import "../../sass/pixel";
 .hero-img {
-
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: $one-hundred-percent;
   padding: 26rem 2em;
   background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../../../assets/hero-big.jpg");
   background-size: cover;
@@ -16,28 +15,28 @@
   color: #fff;
   overflow: hidden;
 
-   @media (max-width: 768px) {
+   @media (max-width: $seven-hundred-sixty-eight) {
      padding: 12rem 2em;
    }
-  @media (min-width: 769px) and (max-width: 996px) {
+  @media (min-width: $seven-hundred-sixty-nine) and (max-width:$nine-hundred-ninety-six) {
     padding: 19rem 2em ;
   }
 
    .white-block-left {
      position: absolute;
      bottom:0;
-     left: -30px;
+     left: -$thirty;
      background-color: white;
-     height: 50px;
+     height: $fifty;
      width: 50%;
      transform: skewX(45deg);
    }
   .white-block-right {
     position: absolute;
     top:0;
-    right: -30px;
+    right: -$thirty;
     background-color: white;
-    height: 50px;
+    height: $fifty;
     width: 50%;
     transform: skewX(45deg);
   }
@@ -51,11 +50,11 @@
   }
 
   hr {
-    max-width: 900px;
+    max-width: $nine-hundred;
     width: 60%;
 
-    @media (max-width: 768px) {
-      width: 100%;
+    @media (max-width: $seven-hundred-sixty-eight) {
+      width: $one-hundred-percent;
     }
   }
 

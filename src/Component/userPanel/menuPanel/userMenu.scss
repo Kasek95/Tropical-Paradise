@@ -1,21 +1,22 @@
+@import "../../sass/pixel";
 .menu__user {
   position: absolute;
-  top: -100px;
+  top: -$one-hundred;
   left: 0;
   height: 105vh;
   background-color: #10437c;
   margin: auto 0;
 
-    @media (max-width: 1338px) {
+    @media (max-width: $one-thousand-three-hundred-thirty-eight) {
       display: flex;
-      height: 100px;
-      width: 100%;
+      height: $one-hundred;
+      width: $one-hundred-percent;
       position: absolute;
       align-items: center;
       top: 0;
       z-index: 5;
     }
-   @media (max-width: 425px) {
+   @media (max-width: $four-hundred-tweenty-five) {
      display: flex;
      justify-content: space-between;
    }
@@ -23,49 +24,49 @@
      display: none;
      padding: 2px;
      border: 1px solid white;
-     border-radius: 5px;
+     border-radius: $five;
      font-size: 1.2rem;
      color: white;
-     @media (max-width: 425px) {
+     @media (max-width: $four-hundred-tweenty-five) {
        display: flex;
-       margin-left: 20px;
+       margin-left: $Tweenty;
      }
    }
    .userNav {
      display: flex;
      flex-direction: column;
      z-index: 5;
-      @media (max-width: 1338px) {
+      @media (max-width: $one-thousand-three-hundred-thirty-eight) {
         display: flex;
         flex-direction: unset;
-        width: 100%;
+        width: $one-hundred-percent;
       }
-      @media (max-width: 425px) {
+      @media (max-width: $four-hundred-tweenty-five) {
         display: none;
         position: absolute;
         flex-direction: column;
         background: #10437c;
-        top: 100px;
+        top: $one-hundred;
         left: 0;
-        width: 100%;
+        width: $one-hundred-percent;
       }
    .box {
      position: relative;
      display: flex;
      flex-direction: column;
      align-items: center;
-     padding: 10px;
+     padding: $ten;
      border-bottom: 2px solid #205189;
-     width: 100%;
+     width: $one-hundred-percent;
      cursor: pointer;
-     @media (max-width: 1338px) {
+     @media (max-width: $one-thousand-three-hundred-thirty-eight) {
        border-bottom: unset;
      }
 
      .icon {
        color: white;
        font-size: 2rem;
-       margin-bottom: 10px;
+       margin-bottom: $ten;
      }
 
      span {
@@ -84,14 +85,14 @@
 
      .liked {
        position: absolute;
-       top: -40px;
+       top: -$forty;
        right: 0;
        display: flex;
        justify-content: center;
        align-items: center;
        background-color: red;
-       width: 20px;
-       height: 20px;
+       width: $Tweenty;
+       height: $Tweenty;
        border-radius: 50%;
      }
      .grey{
@@ -105,21 +106,21 @@
      .boxBtn {
        display: flex;
        justify-content: center;
-       margin: 10px 0 10px 0;
-       padding-bottom: 10px;
+       margin: $ten 0 $ten 0;
+       padding-bottom: $ten;
        border-bottom: 2px solid #205189;
        width: auto;
        cursor: pointer;
-        @media (max-width: 1338px){
+        @media (max-width: $one-thousand-three-hundred-thirty-eight){
           border-bottom: unset;
-          margin-right: 20px;
+          margin-right: $Tweenty;
         }
        .logout {
          background: none;
          border: 1px solid #205189;
-         border-radius: 30px;
+         border-radius: $thirty;
          color: white;
-         padding: 10px;
+         padding: $ten;
          cursor: pointer;
 
        }
@@ -130,7 +131,7 @@
    }
    .box:first-child {
      border-top: 2px solid #205189;
-      @media (max-width: 1338px) {
+      @media (max-width: $one-thousand-three-hundred-thirty-eight) {
         border-top: unset;
       }
    }

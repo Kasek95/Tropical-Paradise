@@ -3,6 +3,8 @@ import "./likedApartment.scss"
 import {Link} from "react-router-dom"
 import {AiOutlineClose} from "react-icons/ai"
 import supabase from "../../../supabase";
+import {toast} from "react-toastify";
+
 
 
 const LikedApartment = ({apartment,getRooms,apartments}) => {
@@ -16,6 +18,16 @@ const LikedApartment = ({apartment,getRooms,apartments}) => {
             })
             .eq("id", id)
         getRooms()
+        toast.success('Usunąłeś z ulubionych!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        })
     }
 
     return (

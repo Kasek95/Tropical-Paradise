@@ -1,16 +1,17 @@
+@import "../../sass/pixel";
 .islandMain {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  margin-top: 80px;
+  margin-top: $eighty;
    .islandContainer {
      position: relative;
-     height: 1000px;
+     height: $one-thousand;
      display: flex;
-     @media (max-width: 768px) {
-       margin-top: 100px;
-       margin-bottom: 200px;
+     @media (max-width: $seven-hundred-sixty-eight) {
+       margin-top: $one-hundred;
+       margin-bottom: $two-hundred;
        flex-direction: column;
      }
 
@@ -18,25 +19,26 @@
        display: flex;
        align-items: center;
        flex-direction: column;
-       height: 100%;
+       height: $one-hundred-percent;
        background-color: #10437c;
-       width: 200px;
-       @media (max-width: 768px) {
-         gap: 10px;
-         width: 100%;
-         min-height: 100px;
+       width: $two-hundred;
+       @media (max-width: $seven-hundred-sixty-eight) {
+         gap: $ten;
+         width: $one-hundred-percent;
+         min-height: $one-hundred;
          flex-direction: unset;
          justify-content: center;
-         padding: 10px;
+         padding: $ten;
        }
        h3 {
           font-family: "Dancing Script", cursive;
           color: white;
           text-align: center;
           font-size: 2rem;
-          margin-top: 10px;
-          margin-bottom: 20px;
-         @media (max-width: 768px) {
+          margin-top: $ten;
+          margin-bottom: $Tweenty;
+          cursor: pointer;
+         @media (max-width: $seven-hundred-sixty-eight) {
           margin-bottom: unset;
            font-size: 1.3rem;
          }
@@ -48,13 +50,13 @@
          text-align: center;
          font-size: 1.5rem;
          font-family: "Dancing Script", cursive;
-         width: 100%;
-         height: 50px;
-         margin-left: 10px;
-         margin-bottom: 30px;
-         padding-left: 10px;
+         width: $one-hundred-percent;
+         height: $fifty;
+         margin-left: $ten;
+         margin-bottom: $thirty;
+         padding-left: $ten;
          cursor: pointer;
-         @media (max-width: 768px) {
+         @media (max-width: $seven-hundred-sixty-eight) {
            margin-bottom: unset;
            margin-left: unset;
            width: unset;
@@ -63,21 +65,21 @@
          .outline {
            display: none;
            position: absolute;
-           right: 5px;
-           top: -25px;
-           width: 25px;
-           height: 25px;
+           right:$five;
+           top: -$tweenty-five;
+           width: $tweenty-five;
+           height: $tweenty-five;
            border-radius: 50%;
            background-color: transparent;
-           box-shadow: 25px 15px 0 10px white;
+           box-shadow: $tweenty-five $fifteen 0 $ten white;
          }
          .outline::before {
            content: "";
            position: absolute;
-           bottom: -75px;
+           bottom: -$seventy-five;
            right: 0;
-           width: 25px;
-           height: 25px;
+           width: $tweenty-five;
+           height: $tweenty-five;
            border-radius: 50%;
            background-color: transparent;
            box-shadow: 21px -20px 0 10px white;
@@ -91,9 +93,9 @@
        }
        .style {
          background-color: white;
-         border-top-left-radius: 30px;
-         border-bottom-left-radius: 30px;
-         @media (max-width: 768px) {
+         border-top-left-radius: $thirty;
+         border-bottom-left-radius: $thirty;
+         @media (max-width: $seven-hundred-sixty-eight) {
            background-color: unset;
            border-top-left-radius: unset;
            border-bottom-left-radius: unset;
@@ -101,47 +103,47 @@
        }
      }
      .roms {
-       height: 100%;
-       width: 100%;
+       height: $one-hundred-percent;
+       width: $one-hundred-percent;
         .allRoms {
           display: flex;
           justify-content: center;
           overflow-x: auto;
-          gap: 20px;
+          gap: $Tweenty;
           flex-wrap: wrap;
-          padding: 40px;
-          width: 100%;
-          height: 100%;
+          padding: $forty;
+          width: $one-hundred-percent;
+          height: $one-hundred-percent;
         }
         .IslandTikiTaki {
           display: none;
           justify-content: center;
           overflow-x: auto;
-          gap: 20px;
+          gap: $Tweenty;
           flex-wrap: wrap;
-          padding: 40px;
-          width: 100%;
-          height: 100%;
+          padding: $forty;
+          width: $one-hundred-percent;
+          height: $one-hundred-percent;
         }
        .IslandNobu {
          display: none;
          justify-content: center;
          overflow-x: auto;
-         gap: 20px;
+         gap: $Tweenty;
          flex-wrap: wrap;
-         padding: 40px;
-         width: 100%;
-         height: 100%;
+         padding: $forty;
+         width: $one-hundred-percent;
+         height: $one-hundred-percent;
        }
        .IslandTocaToca {
          display: none;
          justify-content: center;
          overflow-x: auto;
-         gap: 20px;
+         gap: $Tweenty;
          flex-wrap: wrap;
-         padding: 40px;
-         width: 100%;
-         height: 100%;
+         padding: $forty;
+         width: $one-hundred-percent;
+         height: $one-hundred-percent;
        }
        .show {
          display: flex;
@@ -154,11 +156,11 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: $ten;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: $ten;
   background-color: #10437c;
 }
 

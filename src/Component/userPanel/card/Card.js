@@ -1,6 +1,7 @@
 import React from "react";
 import "./card.scss"
 import supabase from "../../../supabase";
+import {toast} from 'react-toastify';
 
 const Card = ({payments,user,showForm,getPayments}) => {
 
@@ -9,6 +10,16 @@ const Card = ({payments,user,showForm,getPayments}) => {
             .delete()
             .eq("id", id)
         getPayments()
+        toast.success('Usunąłeś kartę!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     if(!payments || !user) return null

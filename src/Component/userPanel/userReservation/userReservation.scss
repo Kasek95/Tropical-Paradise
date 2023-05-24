@@ -1,25 +1,26 @@
+@import "../../sass/pixel";
 .reservationContainer {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  min-height: 100px;
-  width: 100%;
-  padding: 5px;
+  min-height: $one-hundred;
+  width: $one-hundred-percent;
+  padding: $five;
   background-color: white;
-  border-radius: 10px;
-  margin-bottom: 10px;
-   @media (max-width: 520px) {
+  border-radius: $ten;
+  margin-bottom: $ten;
+   @media (max-width: $five-hundred-tweenty) {
      flex-direction: column;
      justify-content: center;
    }
    button {
      border: none;
-     border-radius: 10px;
+     border-radius: $ten;
      background-color: #d84851;
      color: white;
      cursor: pointer;
-     padding: 5px;
+     padding:$five;
    }
 }

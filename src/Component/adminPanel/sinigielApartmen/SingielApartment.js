@@ -76,7 +76,7 @@ const SingielApartment = ({apartment,getApartments}) => {
     }
    const submit = async (e) => {
        e.preventDefault()
-       const {data} = await  supabase
+        await  supabase
            .from("Roms")
            .update({
                RomInfo: editApartment.RomInfo,
@@ -98,6 +98,16 @@ const SingielApartment = ({apartment,getApartments}) => {
        })
        setIsDisplayForm(false)
        getApartments()
+       toast.success('Zmieniłeś informację!', {
+           position: "top-right",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+           theme: "light",
+       });
    }
 
     return (
@@ -122,6 +132,7 @@ const SingielApartment = ({apartment,getApartments}) => {
                            type={"number"}
                            value={editApartment.RomPrice}
                            name={"ProductsPrice"}
+                           id={"ProductsPrice"}
                            onChange={e => setEditApartment({...editApartment, RomPrice: e.target.value})}
                        />
                    </div>
@@ -132,6 +143,7 @@ const SingielApartment = ({apartment,getApartments}) => {
                            type={"number"}
                            value={editApartment.NumberOfGuest}
                            name={"NumberGuest"}
+                           id={"NumberGuest"}
                            onChange={e => setEditApartment({...editApartment, NumberOfGuest: e.target.value})}
                        />
                    </div>
@@ -140,9 +152,9 @@ const SingielApartment = ({apartment,getApartments}) => {
                        <label htmlFor={"ProductsInfo"}>Apartment Info</label>
                        <textarea
                            rows={6}
-                           type={"text"}
                            value={editApartment.RomInfo}
                            name={"ProductsInfo"}
+                           id={"ProductsInfo"}
                            onChange={e => setEditApartment({...editApartment, RomInfo: e.target.value})}
                        />
                    </div>
@@ -153,10 +165,11 @@ const SingielApartment = ({apartment,getApartments}) => {
                    </div>
 
                    <div className={"customSelect"}>
-                       <label>Wybierz wyspę</label>
+                       <label htmlFor={"select"}>Wybierz wyspę</label>
                        <select
                            value={editApartment.Island}
                            onChange={e => setEditApartment({...editApartment,Island: e.target.value})}
+                           id={"select"}
                        >
                            <option value="Tiki Taki">Tiki Taki</option>
                            <option value="Toca Toca">Toca Toca</option>

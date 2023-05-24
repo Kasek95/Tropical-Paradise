@@ -9,7 +9,7 @@ header {
   justify-content: center;
   align-items: center;
   background: $blue-gradient;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur($Tweenty);
   height: $eighty;
   width: $one-hundred-percent;
   z-index: 99;
@@ -21,14 +21,14 @@ header {
        position: relative;
        font-family: $tropical;
        color: $colorWhite;
-       font-size: 1.5rem;
+       font-size: $tweenty-four;
        text-decoration: none;
-       margin-left: 30px;
+       margin-left: $thirty;
        z-index: 10;
        .iconLogo {
          position: absolute;
          bottom: 3px;
-         left: -20px;
+         left: -$Tweenty;
          color: green;
          font-size: 2rem;
          z-index: -100;
@@ -39,34 +39,34 @@ header {
 
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin: 20px;
+        gap: $ten;
+        margin: $Tweenty;
          .hamburger {
            display: none;
            padding: 2px;
            border: 1px solid $colorWhite;
-           border-radius: 5px;
+           border-radius: $five;
            font-size: 1.2rem;
            color: $colorWhite;
-           @media (max-width: 768px) {
+           @media (max-width: $seven-hundred-sixty-eight) {
              display: flex;
            }
 
          }
          nav {
            display: flex;
-           gap: 10px;
-            @media (max-width: 768px){
+           gap: $ten;
+            @media (max-width: $seven-hundred-sixty-eight){
               display: none;
               position: absolute;
               top: $eighty;
               left: 0;
               width: $one-hundred-percent;
-              height: 646px;
+              height: $six-hundred-forty-six;
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              backdrop-filter: blur(50px);
+              backdrop-filter: blur($fifty);
               gap: 0;
               background: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75));
             }
@@ -74,10 +74,21 @@ header {
               font-family: $openSans;
               color: white;
               text-decoration: none;
-              @media (max-width: 768px) {
-                margin-top: 10px;
+              @media (max-width: $seven-hundred-sixty-eight) {
+                margin-top: $ten;
               }
             }
+           .logoutAll {
+             outline: none;
+             color: white;
+             border: none;
+             background-color: unset;
+             font-family: "Ubuntu", sans-serif;
+             cursor: pointer;
+             @media (max-width: $seven-hundred-sixty-eight) {
+               margin-top: $ten;
+             }
+           }
            .admin {
              display: none;
            }
@@ -89,36 +100,36 @@ header {
           position: relative;
           cursor: pointer;
           color: $colorWhite;
-          padding: 5px;
+          padding: $five;
           text-transform: uppercase;
           border: 1px solid $colorWhite;
-          border-radius: 10px;
+          border-radius: $ten;
           .registerConection {
             position: absolute;
-            top: 50px;
+            top: $fifty;
             right: 3px;
             display: none;
             flex-direction: column;
             background-color: white;
-            width: 220px;
+            width: $two-hundred-tweenty;
             text-align: center;
-            border-radius: 20px;
-            padding: 10px;
+            border-radius: $Tweenty;
+            padding: $ten;
             z-index: 1000;
              span {
                color: #2e2e2e;
              }
             a {
-              margin-bottom: 5px;
+              margin-bottom: $five;
             }
           }
           .registerConection::before {
             content: "";
             position: absolute;
-            top:-10px;
-            right: 25px;
-            width: 20px;
-            height: 20px;
+            top:-$ten;
+            right: $tweenty-five;
+            width: $Tweenty;
+            height: $Tweenty;
             background-color: white;
             transform: rotate(45deg);
           }

@@ -6,7 +6,7 @@ import CustomSelect from "./CustomSelect";
 import {addApartmentValidation} from "./validationAddApartment";
 import supabase from "../../../supabase";
 import CustomTextArea from "./CustomTextArea";
-import { ToastContainer, toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddApartmentForm = ({getApartments, cancelForm}) => {

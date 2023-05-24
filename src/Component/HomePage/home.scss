@@ -1,5 +1,6 @@
+@import "../sass/pixel";
 main {
-  width: 100%;
-  margin-top: 80px;
+  width: $one-hundred-percent;
+  margin-top: $eighty;
   overflow: hidden;
 }

@@ -5,14 +5,23 @@ import { GiPalmTree } from "react-icons/gi";
 import {FaBars} from "react-icons/fa"
 import {VscChromeClose} from "react-icons/vsc"
 import {useSelector} from "react-redux";
-
+import supabase from "../../supabase";
+import {login} from "../../features/user";
+import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 
 const Header = ({apartments}) => {
     const [showMenu,setShowMenu] = useState(false)
     const [showLogin, setShowLogin] = useState(false)
     const user = useSelector((state) => state.user.value.user)
-
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const logOut = async () => {
+        await supabase.auth.signOut();
+        dispatch(login({user:null}))
+        navigate("/")
+    }
 
     if(!apartments ) return null
     return (
@@ -29,6 +38,7 @@ const Header = ({apartments}) => {
                             <Link onClick={()=> setShowMenu(false)} to={"/islands"}>Islands</Link>
                             <Link onClick={()=> setShowMenu(false)} to={"/Strefa-klienta"}>Favorites({apartments.filter(el => el.RomLiked === true).length})</Link>
                             {user === null ? null : <Link to={"/adminPanel"} className={user.email === "admin@gmail.com" ? "admin show" : "admin"}>Admin</Link>}
+                            {user === null ? null : <button onClick={logOut} className={"logoutAll"}>Wyloguj</button>}
                         </nav>
                         <div
                             onClick={() => setShowLogin(!showLogin)}
