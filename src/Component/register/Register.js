@@ -4,7 +4,7 @@ import {Formik,Form} from "formik";
 import CustomInput from "./customInput/CustomInput";
 import CustomCheckBox from "./customCheckBox/CustomCheckBox";
 import {advancedSchema} from "./validationUser";
-import {Link, Navigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import supabase from "../../supabase";
 
 const Register = () => {
@@ -14,7 +14,7 @@ const Register = () => {
 
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        const { data, error } = await supabase.auth.signUp({
+        await supabase.auth.signUp({
             email: values.email,
             password: values.pass1,
             options: {
@@ -47,7 +47,7 @@ const Register = () => {
                 >
                     {({ isSubmitting }) => (
                         <Form className={"registration"}>
-                            <h2>Register</h2>
+                            <h2>Rejestracja</h2>
                             <div className={"customInput"}>
                                 <i className="fa-solid fa-user"></i>
                                 <CustomInput
@@ -96,7 +96,7 @@ const Register = () => {
 
                                 <button className={"btnRegister"}  type={"submit"}>Register</button>
 
-                            <span className={"registerSpan"}>Jeśli jesteś zarejstrowany<Link to={"/Login"}>Login</Link></span>
+                            <span className={"registerSpan"}>Jeśli jesteś zarejestrowany<Link to={"/Login"}>Login</Link></span>
                         </Form>
                     )}
                 </Formik>

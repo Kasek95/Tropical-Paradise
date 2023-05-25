@@ -9,7 +9,7 @@ const WelcomeSection = () => {
         <>
            <section className={"welcome"}>
                <h1>Tropical Paradise</h1>
-               <p className="header__text">Welcome and reservation your dream vacation</p>
+               <p className="header__text">Witamy i zapraszamy do rezerwacji!</p>
                <Link to="/islands" className="header__btn btn-special-animation">Poznaj ofertę</Link>
                <div className="white-block"></div>
            </section>

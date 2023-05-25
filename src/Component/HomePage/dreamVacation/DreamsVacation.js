@@ -9,7 +9,7 @@ const DreamsVacation = ( ) => {
     return (
         <section className="dreams">
             <div className="container wrapper">
-                <h2 className="section-heading">Make dreams come true</h2>
+                <h2 className="section-heading">Spełniaj swoje marzenia</h2>
                 <div className="dreams_box">
                     <div className="dreams__box-img">
                         <img src={paradise} alt="Domki nad oceanem" className="dreams__img"/>

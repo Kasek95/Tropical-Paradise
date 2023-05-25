@@ -42,7 +42,7 @@ const Login = ()=> {
             <section className={"loginMain"}>
                 <article className={"formContainer container"}>
                    <form className={"form"}>
-                        <h2>Login</h2>
+                        <h2>Logowanie</h2>
                         <div className={"inputBox"}>
                             <label htmlFor={"Email"}>E-mail</label>
                             <input value={email} onChange={e => setEmail(e.target.value)} name={"Email"} placeholder={"Write your email"} type={"email"} required={"Write e-mail"}/>
@@ -52,7 +52,7 @@ const Login = ()=> {
                             <input value={password} onChange={e => setPassword(e.target.value)} placeholder={"Write your password"} type={"password"} required={"Write password"}/>
                         </div>
                        <button onClick={loginInUser} className={"btnLogin"}>Login</button>
-                       <span>You are not register <Link to={"/register"}><strong>Register</strong></Link></span>
+                       <span>Nie jesteś zarejestrowany<Link to={"/register"}><strong>Register</strong></Link></span>
                    </form>
                 </article>
             </section>

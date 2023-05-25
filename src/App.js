@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react";
 import supabase from "./supabase";
-import {Route, Routes, Navigate, useParams} from "react-router-dom";
+import {Route, Routes, Navigate} from "react-router-dom";
 import Home from "./Component/HomePage/Home";
 import IslandPage from "./Component/IslandsPage/IslandPage";
 import Header from "./Component/header/Header";
