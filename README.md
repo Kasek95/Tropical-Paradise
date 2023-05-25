@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Tropical Paradise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Tropical paradise is a private company that owns 3 islands, on which it has its own apartments, and you can rent them all year round. On the website you can make reservations, add payment methods in the user's panel, cancel reservations from the user's panel and the admin.
 
-In the project directory, you can run:
+## Technologies
+Project is created with:
+* React
+* JavaScript
+* SASS/SCSS
+* Api
+* Supabase
+* Redux
 
-### `npm start`
+## Setup
+To run this project, install it locally using npm:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+1. Download repository to your desktop.
+2. Open the repository in your code editor.
+3. In terminal write npm install
+4. Next write npm start .
+```
+## Illustration
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Landing Page
 
-### `npm test`
+You can see each category products when u click each card above Popular Products.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![LandingPage](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/1d24ca92-0a74-4097-9579-ca9f75811bd0)
+![LandingPage2](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/cd699d40-3241-419e-9989-28b791c15665)
+![LandingPage3](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/8508b298-b9dd-47fc-ab51-b211d1394be6)
+![LandingPage4](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/8581d847-d1b7-439a-b66f-92f842231476)
+![LandingPage5](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/5c1abd91-357c-477f-a539-6683bad811db)
+![LandingPage6](https://user-images.githubusercontent.com/114489977/240986996-e3e92772-ff74-4826-93c1-ab240c4afc28.jpg)
+![LandingPage7](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/b68767ba-ffa9-4349-861f-c38e484fb577)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Products Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![IslandPage](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/d578fcca-1497-4c5c-ad0d-e39acd4494b1)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Singiel Apartment Page: 
+![singielApartment](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/efaf3934-3133-445f-816b-1ad5fbcf4232)
 
-### `npm run eject`
+Admin Page:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To log in to the Admin panel, you must enter the following data: `Email : admin@gmail.com Password: xyz123`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![loginPage](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/5c24f802-d0cc-46b6-9a46-f6767a4881d9)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+User Page:
+To log in to the User i creat 2 custom users one is `Email: custom@gmail.com Password: xyz123` second ` Email:customuser@gmail.com  Password: xyz123`
+![UserPage](https://github.com/Kasek95/Tropical-Paradise/assets/114489977/5fd12566-69a0-4ad5-ad29-8fcf570e98a6)
