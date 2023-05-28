@@ -20,6 +20,7 @@ const Header = ({apartments}) => {
     const logOut = async () => {
         await supabase.auth.signOut();
         dispatch(login({user:null}))
+        setShowMenu(false)
         navigate("/")
     }
 
