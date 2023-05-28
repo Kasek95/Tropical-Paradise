@@ -47,16 +47,18 @@ const Header = ({apartments}) => {
                             <div
                                 onMouseLeave={() => setShowLogin(false)}
                                 className={showLogin ? "registerConection show" : "registerConection"}>
-                                <Link to={"/Login"}>
+                                <Link onClick={() => setShowMenu(false)} to={"/Login"}>
                                     Login
                                 </Link>
                                 <span>
                                     Nie jesteś zarejestrowany?
                                 </span>
                                 <Link
+                                    onClick={() => setShowMenu(false)}
                                     to={"/Register"}>Rejestracja
                                 </Link>
                                 <Link
+                                    onClick={() => setShowMenu(false)}
                                     to={"/Strefa-klienta"}>Pulpit
                                 </Link>
                             </div>

@@ -14,7 +14,7 @@ import {VscChromeClose} from "react-icons/vsc";
 const UserMenu = ({user,apartments,setReservation,showLikedRoms, displayPulpit,displayPayment}) => {
       const dispatch = useDispatch()
       const navigate = useNavigate()
-      const [showUserMenu, setShowUserMenu] = useState(true)
+      const [showUserMenu, setShowUserMenu] = useState(false)
       const showPulpit = () => {
           setShowUserMenu(false)
           displayPulpit()

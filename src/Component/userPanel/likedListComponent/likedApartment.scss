@@ -33,11 +33,19 @@
      margin-left: $Tweenty;
       span {
         margin-bottom: $five;
+        @media (max-width: $four-hundred-tweenty-five) {
+          text-align: center;
+        }
       }
      img {
        width: $one-hundred;
        height: $one-hundred;
        object-fit: cover;
+     }
+   }
+   p {
+     @media (max-width: $four-hundred-tweenty-five) {
+       text-align: center;
      }
    }
    .price {
