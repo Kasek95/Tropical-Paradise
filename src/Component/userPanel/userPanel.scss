@@ -7,6 +7,7 @@
   margin-top: $eighty;
   @media (max-width: $four-hundred-tweenty-five) {
     height: 200vh;
+    align-items: center;
   }
     .userContainer {
      position: relative;
