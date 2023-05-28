@@ -5,11 +5,14 @@
   display: flex;
   font-family: $openSans;
   width: $one-hundred-percent;
-  height: 150vh;
+  height: 110vh;
   margin: $eighty 0 0 0;
   background-color: #BDDDF1;
   @media (max-width: $seven-hundred-sixty-eight) {
     flex-direction: column;
+  }
+  @media (max-width: $four-hundred-tweenty-five) {
+    height: 200vh;
   }
 
 

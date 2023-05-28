@@ -45,11 +45,11 @@ const Login = ()=> {
                         <h2>Logowanie</h2>
                         <div className={"inputBox"}>
                             <label htmlFor={"Email"}>E-mail</label>
-                            <input value={email} onChange={e => setEmail(e.target.value)} name={"Email"} placeholder={"Write your email"} type={"email"} required={"Write e-mail"}/>
+                            <input id={"Email"} value={email} onChange={e => setEmail(e.target.value)} name={"Email"} placeholder={"Write your email"} type={"email"} required={"Write e-mail"}/>
                         </div>
                         <div className={"inputBox"}>
                             <label htmlFor={"Password"}>Password</label>
-                            <input value={password} onChange={e => setPassword(e.target.value)} placeholder={"Write your password"} type={"password"} required={"Write password"}/>
+                            <input value={password} onChange={e => setPassword(e.target.value)} placeholder={"Write your password"} type={"password"} required={"Write password"} id={"Password"}/>
                         </div>
                        <button onClick={loginInUser} className={"btnLogin"}>Login</button>
                        <span>Nie jesteś zarejestrowany<Link to={"/register"}><strong>Register</strong></Link></span>
